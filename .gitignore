@@ -2,3 +2,16 @@
 Thumbs.db
 desktop.ini
 *.log
+
+# Python (local TTS server)
+__pycache__/
+*.pyc
+*.pyo
+
+# Generated audio / temp / screenshot scratch
+*.wav
+*.tmp
+shot*.png
+side.png
+globe_zoom.png
+gz.png

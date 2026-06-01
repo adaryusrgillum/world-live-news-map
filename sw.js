@@ -3,7 +3,7 @@
 //   - App shell (HTML/CSS/JS/data/icons): cache-first, so the app opens offline.
 //   - Live APIs (GDELT, Hacker News, USGS, weather): network-only, never cached
 //     (stale news is worse than no news; failures degrade gracefully in the app).
-const CACHE = "news-map-v2";
+const CACHE = "news-map-v5";
 const SHELL = [
   "./",
   "./index.html",
@@ -14,6 +14,11 @@ const SHELL = [
   "./vendor/leaflet.js",
   "./vendor/globe.gl.min.js",
   "./data/world-countries.js",
+  "./textures/earth-blue-marble.jpg",
+  "./textures/earth-night.jpg",
+  "./textures/earth-topology.png",
+  "./textures/earth-water.png",
+  "./textures/clouds.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
 ];
@@ -43,7 +48,7 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(request.url);
   const isLiveApi =
-    /gdeltproject\.org|hn\.algolia\.com|earthquake\.usgs\.gov|api\.weather\.gov|youtube\.com|ytimg\.com/.test(
+    /gdeltproject\.org|hn\.algolia\.com|earthquake\.usgs\.gov|api\.weather\.gov|opensky-network\.org|api\.wheretheiss\.at|celestrak\.org|meri\.digitraffic\.fi|youtube\.com|ytimg\.com|server\.arcgisonline\.com/.test(
       url.hostname + url.pathname
     );
 

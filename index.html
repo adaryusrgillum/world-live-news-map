@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" href="./icons/icon-192.png" />
     <link rel="icon" href="./icons/icon-192.png" />
     <link rel="stylesheet" href="./vendor/leaflet.css" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=13" />
   </head>
   <body>
     <main class="shell">
@@ -22,7 +22,7 @@
         <div id="map" class="map"></div>
         <div id="globe" class="globe" hidden></div>
         <div class="control-stack">
-        <div class="topbar">
+        <div class="topbar" hidden aria-hidden="true">
           <div>
             <h1>World Live News Map</h1>
             <p id="statusText">Loading global headlines...</p>
@@ -48,30 +48,59 @@
           </div>
         </div>
         <div class="toolbar" aria-label="View and layer controls">
-          <button id="viewToggle" class="tool" type="button" aria-pressed="false" title="Toggle 2D map / 3D globe">
-            <span aria-hidden="true">&#127760;</span> <span class="tool-label">3D Globe</span>
-          </button>
-          <button id="radioBtn" class="tool" type="button" aria-pressed="false" title="Read the briefing aloud">
-            <span aria-hidden="true">&#128266;</span> <span class="tool-label">Radio</span>
-          </button>
-          <button id="quakeToggle" class="tool" type="button" aria-pressed="false" title="Toggle live earthquakes (USGS)">
-            <span aria-hidden="true">&#127759;</span> <span class="tool-label">Quakes</span>
-          </button>
-          <button id="alertToggle" class="tool" type="button" aria-pressed="false" title="Toggle live US weather alerts (NWS)">
-            <span aria-hidden="true">&#9888;</span> <span class="tool-label">Alerts</span>
-          </button>
-          <button id="translateBtn" class="tool" type="button" aria-pressed="false" title="Translate headlines to English">
-            <span aria-hidden="true">&#127760;</span> <span class="tool-label">Translate</span>
-          </button>
-          <button id="tvToggle" class="tool" type="button" aria-pressed="true" title="Toggle live-stream tiles on the globe">
-            <span aria-hidden="true">&#128250;</span> <span class="tool-label">Globe TV</span>
-          </button>
-          <button id="installBtn" class="tool" type="button" hidden title="Install this app">
-            <span aria-hidden="true">&#11015;</span> <span class="tool-label">Install</span>
-          </button>
+          <div class="tool-menu">
+            <button
+              id="toolMenuBtn"
+              class="tool tool-menu-btn"
+              type="button"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-controls="toolMenuPanel"
+              title="Map tools and layers"
+            >
+              <span aria-hidden="true">&#9776;</span>
+              <span class="tool-label">Tools</span>
+              <span class="tool-menu-caret" aria-hidden="true">&#9662;</span>
+            </button>
+            <div id="toolMenuPanel" class="tool-menu-panel" role="menu" hidden>
+              <button id="viewToggle" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="false" title="Toggle 2D map / 3D globe">
+                <span aria-hidden="true">&#127760;</span> <span class="tool-label">3D Globe</span>
+              </button>
+              <button id="radioBtn" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="false" title="Read the briefing aloud">
+                <span aria-hidden="true">&#128266;</span> <span class="tool-label">Radio</span>
+              </button>
+              <button id="quakeToggle" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="false" title="Toggle live earthquakes (USGS)">
+                <span aria-hidden="true">&#127759;</span> <span class="tool-label">Quakes</span>
+              </button>
+              <button id="alertToggle" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="false" title="Toggle live US weather alerts (NWS)">
+                <span aria-hidden="true">&#9888;</span> <span class="tool-label">Alerts</span>
+              </button>
+              <button id="flightToggle" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="false" title="Live aircraft positions (OpenSky)">
+                <span aria-hidden="true">&#9992;</span> <span class="tool-label">Flights</span>
+              </button>
+              <button id="shipToggle" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="false" title="Live ship AIS positions (Digitraffic)">
+                <span aria-hidden="true">&#9875;</span> <span class="tool-label">Ships</span>
+              </button>
+              <button id="satToggle" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="false" title="Live satellite orbits (CelesTrak + SGP4)">
+                <span aria-hidden="true">&#128752;</span> <span class="tool-label">Satellites</span>
+              </button>
+              <button id="satImageryToggle" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="false" title="Satellite imagery basemap (Esri)">
+                <span aria-hidden="true">&#127757;</span> <span class="tool-label">Sat imagery</span>
+              </button>
+              <button id="translateBtn" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="false" title="Translate headlines to English">
+                <span aria-hidden="true">&#127760;</span> <span class="tool-label">Translate</span>
+              </button>
+              <button id="tvToggle" class="tool tool-menu-item" type="button" role="menuitem" aria-pressed="true" title="Toggle live-stream dots on the globe (hover for preview)">
+                <span aria-hidden="true">&#128308;</span> <span class="tool-label">Live dots</span>
+              </button>
+              <button id="installBtn" class="tool tool-menu-item" type="button" role="menuitem" hidden title="Install this app">
+                <span aria-hidden="true">&#11015;</span> <span class="tool-label">Install</span>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="map-tools" aria-label="Replay and spotlight controls">
-          <label class="timeline-control" for="timeScrubber">
+          <label class="timeline-control" for="timeScrubber" hidden aria-hidden="true">
             <span class="timeline-label"><strong id="timeWindowLabel">24h</strong> replay</span>
             <input id="timeScrubber" type="range" min="1" max="24" value="24" step="1" aria-label="Replay window in hours" />
           </label>
@@ -87,6 +116,9 @@
           <span><i class="cool"></i> Emerging</span>
           <span><i class="quake"></i> Quake</span>
           <span><i class="alert"></i> Alert</span>
+          <span><i class="flight"></i> Flight</span>
+          <span><i class="ship"></i> Ship</span>
+          <span><i class="satellite"></i> Satellite</span>
         </div>
         <div class="ticker" id="ticker" aria-label="Live headline ticker" hidden>
           <span class="ticker-tag"><span class="live-dot"></span> LIVE</span>
@@ -110,6 +142,22 @@
           </div>
           <span id="articleCount" class="count">0</span>
         </header>
+        <section class="ai-assist" aria-label="AI assistant">
+          <div class="section-label">
+            <span><span class="ai-badge">AI</span> Assistant</span>
+            <small id="aiAssistMeta">checking model…</small>
+          </div>
+          <div class="ai-actions">
+            <button id="aiAnchorBtn" class="ai-act" type="button" title="AI news anchor (spoken briefing)">&#127908; Anchor</button>
+            <button id="aiBriefBtn" class="ai-act" type="button" title="AI brief of the current view">&#128203; Brief</button>
+            <button id="aiMicBtn" class="ai-act" type="button" aria-pressed="false" title="Voice command / question">&#127908;&#65039;</button>
+          </div>
+          <form id="aiAskForm" class="ai-ask">
+            <input id="aiAskInput" type="text" placeholder="Ask about the news, or say 'fly to Japan'…" autocomplete="off" />
+            <button type="submit" title="Ask">&#10148;</button>
+          </form>
+          <div id="aiOutput" class="ai-output" hidden></div>
+        </section>
         <section class="aipulse" aria-label="Live pulse: AI, GitHub, tech and world news">
           <div class="section-label">
             <span><span class="ai-badge">AI</span> Pulse</span>
@@ -118,18 +166,11 @@
           <div id="pulseTabs" class="pulse-tabs"></div>
           <div id="aiPulseList" class="aipulse-list"></div>
         </section>
-        <section class="streams" aria-label="Live news streams">
-          <div class="section-label">
-            <span>Live Streams</span>
-            <small>Official sources</small>
-          </div>
-          <div id="streamList" class="stream-list"></div>
-        </section>
         <div id="feedList" class="feed-list"></div>
       </aside>
     </main>
     <script src="./vendor/leaflet.js"></script>
     <script src="./data/world-countries.js"></script>
-    <script src="./app.js"></script>
+    <script src="./app.js?v=13"></script>
   </body>
 </html>

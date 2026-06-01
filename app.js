@@ -400,17 +400,528 @@ const LIVE_STREAMS = [
     name: "TeleSUR English",
     group: "Africa & Americas",
     category: "Latin America",
+    countryCode: "VE",
     accent: "#ff7a3d",
     preview: "Latin America live news",
     channelId: "UCmuTmpLY35O3csvhyA6vrkg",
     url: "https://www.youtube.com/@telesurenglish/live"
+  },
+  /* ---------- More worldwide live desks ---------- */
+  {
+    name: "BBC News",
+    group: "Europe",
+    category: "UK",
+    countryCode: "GB",
+    accent: "#bb1919",
+    preview: "UK and world breaking coverage",
+    channelId: "UC16niRr50-MSBwiO3YDb3RA",
+    url: "https://www.youtube.com/@BBCNews/live"
+  },
+  {
+    name: "ITV News",
+    group: "Europe",
+    category: "UK",
+    countryCode: "GB",
+    accent: "#2f6fff",
+    preview: "UK breaking news and politics",
+    channelId: "UC7IMw6cPrT77l2wLhLqmRog",
+    url: "https://www.youtube.com/@ITVNews/live"
+  },
+  {
+    name: "RTÉ News",
+    group: "Europe",
+    category: "Ireland",
+    countryCode: "IE",
+    accent: "#2fd0c4",
+    preview: "Ireland and Europe",
+    channelId: "UCn-0iy0uUI8t-RaBdhuEocg",
+    url: "https://www.youtube.com/@rte/live"
+  },
+  {
+    name: "RTVE Noticias",
+    group: "Europe",
+    category: "Spain",
+    countryCode: "ES",
+    accent: "#ff4138",
+    preview: "Spain and international news",
+    channelId: "UC5b0L9sE2dcZSTs002Unv0w",
+    url: "https://www.youtube.com/@rtvenoticias/live"
+  },
+  {
+    name: "Rai News 24",
+    group: "Europe",
+    category: "Italy",
+    countryCode: "IT",
+    accent: "#36a3ff",
+    preview: "Italy 24/7 news",
+    channelId: "UCZQ6sRHuLKu_LrnmKUgZxg",
+    url: "https://www.youtube.com/@rainews/live"
+  },
+  {
+    name: "NRK News",
+    group: "Europe",
+    category: "Norway",
+    countryCode: "NO",
+    accent: "#5796ff",
+    preview: "Norway and Arctic news",
+    channelId: "UC4Z20AXZJBxHYiPnVql6EhA",
+    url: "https://www.youtube.com/@nrk/live"
+  },
+  {
+    name: "TVN24",
+    group: "Europe",
+    category: "Poland",
+    countryCode: "PL",
+    accent: "#ff4138",
+    preview: "Poland and Central Europe",
+    channelId: "UCziKqmtR8wRHLn_vpDe6AJQ",
+    url: "https://www.youtube.com/@tvn24/live"
+  },
+  {
+    name: "ČT24",
+    group: "Europe",
+    category: "Czechia",
+    countryCode: "CZ",
+    accent: "#ff7a3d",
+    preview: "Czech 24/7 news",
+    channelId: "UCRylCpr9plxR9Nf7s8NK6w",
+    url: "https://www.youtube.com/@ct24/live"
+  },
+  {
+    name: "Digi24",
+    group: "Europe",
+    category: "Romania",
+    countryCode: "RO",
+    accent: "#2d7dff",
+    preview: "Romania and regional news",
+    channelId: "UCROqQ--GqWqXmJi3m8px7Rg",
+    url: "https://www.youtube.com/@digi24/live"
+  },
+  {
+    name: "ERT News",
+    group: "Europe",
+    category: "Greece",
+    countryCode: "GR",
+    accent: "#2fd0c4",
+    preview: "Greece and Mediterranean",
+    channelId: "UC8Zs1hmZQ-Mrmx-5f7h9jJQ",
+    url: "https://www.youtube.com/@ertnews/live"
+  },
+  {
+    name: "africanews",
+    group: "Africa & Americas",
+    category: "Pan-Africa",
+    countryCode: "SN",
+    accent: "#f5a623",
+    preview: "Africa-wide English coverage",
+    channelId: "UCC7FP1BOyKG4hQSbeW1aHxw",
+    url: "https://www.youtube.com/@africanews/live"
+  },
+  {
+    name: "Channels TV",
+    group: "Africa & Americas",
+    category: "Nigeria",
+    countryCode: "NG",
+    accent: "#2fd0c4",
+    preview: "Nigeria breaking news",
+    channelId: "UCzx6-KzNEU2NS81JQSFeIIw",
+    url: "https://www.youtube.com/@channelstv/live"
+  },
+  {
+    name: "Geo News",
+    group: "Asia & Middle East",
+    category: "Pakistan",
+    countryCode: "PK",
+    accent: "#2fd0c4",
+    preview: "Pakistan and South Asia",
+    channelId: "UCage-g6CJ8152DbHOsPRevQ",
+    url: "https://www.youtube.com/@geonews/live"
+  },
+  {
+    name: "ARY News",
+    group: "Asia & Middle East",
+    category: "Pakistan",
+    countryCode: "PK",
+    accent: "#ff4138",
+    preview: "Pakistan live desk",
+    channelId: "UC1v5aLdVFHZ8y-Ww4bWTIbw",
+    url: "https://www.youtube.com/@arynews/live"
+  },
+  {
+    name: "Republic World",
+    group: "Asia & Middle East",
+    category: "India",
+    countryCode: "IN",
+    accent: "#ff4138",
+    preview: "India and geopolitics",
+    channelId: "UCiqdFpj75xdmAuRo0tyDQIw",
+    url: "https://www.youtube.com/@RepublicWorld/live"
+  },
+  {
+    name: "News18 India",
+    group: "Asia & Middle East",
+    category: "India",
+    countryCode: "IN",
+    accent: "#ff7a3d",
+    preview: "India breaking news",
+    channelId: "UCZ3lFEsjPq3t89PJTKHab9w",
+    url: "https://www.youtube.com/@News18India/live"
+  },
+  {
+    name: "India Today",
+    group: "Asia & Middle East",
+    category: "India",
+    countryCode: "IN",
+    accent: "#e34242",
+    preview: "India live newsroom",
+    channelId: "UCywuGYJPqkrIu59zqnnIJg",
+    url: "https://www.youtube.com/@IndiaToday/live"
+  },
+  {
+    name: "Kompas TV",
+    group: "Asia & Middle East",
+    category: "Indonesia",
+    countryCode: "ID",
+    accent: "#ff4138",
+    preview: "Indonesia and ASEAN",
+    channelId: "UCGr-cpuNf6zP7WZxkV7H4Ow",
+    url: "https://www.youtube.com/@KompasTV/live"
+  },
+  {
+    name: "Thai PBS",
+    group: "Asia & Middle East",
+    category: "Thailand",
+    countryCode: "TH",
+    accent: "#7b61ff",
+    preview: "Thailand public broadcaster",
+    channelId: "UC5NIhAccX8i9L5E-x9EPZ6w",
+    url: "https://www.youtube.com/@ThaiPBS/live"
+  },
+  {
+    name: "TaiwanPlus",
+    group: "Asia & Middle East",
+    category: "Taiwan",
+    countryCode: "TW",
+    accent: "#2fd0c4",
+    preview: "Taiwan and cross-strait news",
+    channelId: "UC0kmoZ66KB3d4WjuU6ByOw",
+    url: "https://www.youtube.com/@taiwanplus/live"
+  },
+  {
+    name: "SCMP",
+    group: "Asia & Middle East",
+    category: "Hong Kong",
+    countryCode: "HK",
+    accent: "#ff4138",
+    preview: "Hong Kong and China business",
+    channelId: "UCzu3ew5BDAG3m0A5j0dR5XQ",
+    url: "https://www.youtube.com/@scmp/live"
+  },
+  {
+    name: "Milenio Noticias",
+    group: "Africa & Americas",
+    category: "Mexico",
+    countryCode: "MX",
+    accent: "#ff4138",
+    preview: "Mexico breaking news",
+    channelId: "UCzpVaKFEk8UpY1g0sL55C0A",
+    url: "https://www.youtube.com/@milenio/live"
+  },
+  {
+    name: "GloboNews",
+    group: "Africa & Americas",
+    category: "Brazil",
+    countryCode: "BR",
+    accent: "#ff4138",
+    preview: "Brazil 24/7 news",
+    channelId: "UCfj9y8J-zq2f3Bv6f6p4egg",
+    url: "https://www.youtube.com/@globonews/live"
+  },
+  {
+    name: "Todo Noticias",
+    group: "Africa & Americas",
+    category: "Argentina",
+    countryCode: "AR",
+    accent: "#36a3ff",
+    preview: "Argentina live coverage",
+    channelId: "UC7T7stNDXiK1C7p6yKTK7Fg",
+    url: "https://www.youtube.com/@todonoticias/live"
+  },
+  {
+    name: "Caracol Noticias",
+    group: "Africa & Americas",
+    category: "Colombia",
+    countryCode: "CO",
+    accent: "#ff7a3d",
+    preview: "Colombia and Andean region",
+    channelId: "UC1Mw7BcBur6t7cfuz66c8wA",
+    url: "https://www.youtube.com/@CaracolNoticias/live"
+  },
+  {
+    name: "TVN Chile",
+    group: "Africa & Americas",
+    category: "Chile",
+    countryCode: "CL",
+    accent: "#2d7dff",
+    preview: "Chile national news",
+    channelId: "UC_aWQ7y9l8zqa1NrqmBI2A",
+    url: "https://www.youtube.com/@TVN/live"
+  },
+  {
+    name: "1News",
+    group: "Africa & Americas",
+    category: "New Zealand",
+    countryCode: "NZ",
+    accent: "#2d7dff",
+    preview: "New Zealand live news",
+    channelId: "UC0pH03YBq7XLqJEBxHgy8LA",
+    url: "https://www.youtube.com/@1News/live"
+  },
+  {
+    name: "Associated Press",
+    group: "United States",
+    category: "Wire service",
+    countryCode: "US",
+    accent: "#f0a000",
+    preview: "Global wire live events",
+    channelId: "UC52wx-f42l8VgLPrimeAP",
+    url: "https://www.youtube.com/@AssociatedPress/live"
+  },
+  {
+    name: "NewsNation",
+    group: "United States",
+    category: "National",
+    countryCode: "US",
+    accent: "#2d7dff",
+    preview: "US national breaking news",
+    channelId: "UC5GiNzUd0aeDNzFyPB8Y8Bg",
+    url: "https://www.youtube.com/@NewsNation/live"
+  },
+  {
+    name: "Newsmax TV",
+    group: "United States",
+    category: "National",
+    countryCode: "US",
+    accent: "#ff4138",
+    preview: "US politics and breaking",
+    channelId: "UCr_NmUbDiAYfH6KaonwXcw",
+    url: "https://www.youtube.com/@NewsmaxTV/live"
+  },
+  {
+    name: "The Hill",
+    group: "United States",
+    category: "Politics",
+    countryCode: "US",
+    accent: "#7b61ff",
+    preview: "Washington politics live",
+    channelId: "UC5a02D6FckHABdmzoBnl8rw",
+    url: "https://www.youtube.com/@thehill/live"
+  },
+  {
+    name: "Scripps News",
+    group: "United States",
+    category: "National",
+    countryCode: "US",
+    accent: "#36a3ff",
+    preview: "US news and investigations",
+    channelId: "UC8ABex6H4C6nln_dFjKveQ",
+    url: "https://www.youtube.com/@ScrippsNews/live"
+  },
+  {
+    name: "VOA News",
+    group: "United States",
+    category: "International",
+    countryCode: "US",
+    accent: "#2fd0c4",
+    preview: "US international broadcaster",
+    channelId: "UC5Vz5rFUApyu0lh92FOzP4w",
+    url: "https://www.youtube.com/@VOANews/live"
+  },
+  {
+    name: "UN News",
+    group: "United States",
+    category: "International",
+    countryCode: "US",
+    accent: "#5796ff",
+    preview: "United Nations live briefings",
+    channelId: "UCIsStuOPWRMj-hxhQR3HQA",
+    url: "https://www.youtube.com/@UNNews/live"
+  },
+  /* ---------- US state & regional affiliates (anchored to state centroids) ---------- */
+  {
+    name: "KHOU 11",
+    group: "US States",
+    category: "Texas",
+    countryCode: "US",
+    usState: "TX",
+    accent: "#2d7dff",
+    preview: "Houston and Texas Gulf Coast",
+    channelId: "UCtKNoTPzUCJ0eFdKaROU4w",
+    url: "https://www.youtube.com/@KHOU11/live"
+  },
+  {
+    name: "WFAA",
+    group: "US States",
+    category: "Texas",
+    countryCode: "US",
+    usState: "TX",
+    accent: "#ff4138",
+    preview: "Dallas–Fort Worth breaking news",
+    channelId: "UC7OPqREz4w7W3MvLv8Xy8FQ",
+    url: "https://www.youtube.com/@WFAA/live"
+  },
+  {
+    name: "KCRA 3",
+    group: "US States",
+    category: "California",
+    countryCode: "US",
+    usState: "CA",
+    accent: "#ff4138",
+    preview: "Sacramento and Northern California",
+    channelId: "UCdKCrFOkhXnOj_X6LaigbGQ",
+    url: "https://www.youtube.com/@KCRA3/live"
+  },
+  {
+    name: "ABC7 News Bay Area",
+    group: "US States",
+    category: "California",
+    countryCode: "US",
+    usState: "CA",
+    accent: "#2d7dff",
+    preview: "San Francisco Bay Area",
+    channelId: "UCitC1Fa1DHBgd8YoC3HAS1w",
+    url: "https://www.youtube.com/@abc7newsbayarea/live"
+  },
+  {
+    name: "WPLG Local 10",
+    group: "US States",
+    category: "Florida",
+    countryCode: "US",
+    usState: "FL",
+    accent: "#ff4138",
+    preview: "Miami and South Florida",
+    channelId: "UCx1x9dubsB99bWEiwXCm3A",
+    url: "https://www.youtube.com/@WPLGLocal10/live"
+  },
+  {
+    name: "WESH 2",
+    group: "US States",
+    category: "Florida",
+    countryCode: "US",
+    usState: "FL",
+    accent: "#36a3ff",
+    preview: "Orlando and Central Florida",
+    channelId: "UCDF0Gn3hhkyZF46oK-hadJg",
+    url: "https://www.youtube.com/@WESH/live"
+  },
+  {
+    name: "WCVB Channel 5",
+    group: "US States",
+    category: "Massachusetts",
+    countryCode: "US",
+    usState: "MA",
+    accent: "#ff4138",
+    preview: "Boston and New England",
+    channelId: "UC-XuBuSkx6yL2t5A7Vd6LA",
+    url: "https://www.youtube.com/@WCVB/live"
+  },
+  {
+    name: "NBC New York",
+    group: "US States",
+    category: "New York",
+    countryCode: "US",
+    usState: "NY",
+    accent: "#2d7dff",
+    preview: "New York City metro",
+    channelId: "UCN2L5lX3Qz6uJj2o5t15sHg",
+    url: "https://www.youtube.com/@NBCNewYork/live"
+  },
+  {
+    name: "WDIV Local 4",
+    group: "US States",
+    category: "Michigan",
+    countryCode: "US",
+    usState: "MI",
+    accent: "#ff4138",
+    preview: "Detroit and Michigan",
+    channelId: "UCjKpy8gO_WTjqSM4ltpZjZA",
+    url: "https://www.youtube.com/@Local4WDIV/live"
+  },
+  {
+    name: "KARE 11",
+    group: "US States",
+    category: "Minnesota",
+    countryCode: "US",
+    usState: "MN",
+    accent: "#7b61ff",
+    preview: "Minneapolis–Saint Paul",
+    channelId: "UCi9CoDmvTDZmnGJazcFZ0Ag",
+    url: "https://www.youtube.com/@kare11/live"
+  },
+  {
+    name: "9NEWS Denver",
+    group: "US States",
+    category: "Colorado",
+    countryCode: "US",
+    usState: "CO",
+    accent: "#ff4138",
+    preview: "Denver and Colorado",
+    channelId: "UCWekCUZyRljVAQ2H2FOCNug",
+    url: "https://www.youtube.com/@9news/live"
+  },
+  {
+    name: "Arizona's Family",
+    group: "US States",
+    category: "Arizona",
+    countryCode: "US",
+    usState: "AZ",
+    accent: "#2d7dff",
+    preview: "Phoenix and Arizona",
+    channelId: "UC0FCZ0haCK0qLPL-vZLOdqw",
+    url: "https://www.youtube.com/@azfamily/live"
+  },
+  {
+    name: "KING 5 Seattle",
+    group: "US States",
+    category: "Washington",
+    countryCode: "US",
+    usState: "WA",
+    accent: "#ff4138",
+    preview: "Seattle and the Pacific Northwest",
+    channelId: "UCuiPx9EDwpGq9nIt85BS3cA",
+    url: "https://www.youtube.com/@KING5Seattle/live"
+  },
+  {
+    name: "WSB-TV",
+    group: "US States",
+    category: "Georgia",
+    countryCode: "US",
+    usState: "GA",
+    accent: "#2d7dff",
+    preview: "Atlanta and Georgia",
+    channelId: "UCPsSnSR7ymSE8on3wafNbqg",
+    url: "https://www.youtube.com/@wsbtv/live"
+  },
+  {
+    name: "WTVF NewsChannel 5",
+    group: "US States",
+    category: "Tennessee",
+    countryCode: "US",
+    usState: "TN",
+    accent: "#36a3ff",
+    preview: "Nashville and Tennessee",
+    channelId: "UCO6kzQ-7wcG0x8W5LpBA9RQ",
+    url: "https://www.youtube.com/@newschannel5/live"
   }
-].map((stream, index) => ({
-  id: index,
-  access: stream.channelId ? "YouTube Live" : "Open link",
-  ...stream,
-  embedUrl: youtubeLiveEmbed(stream.channelId)
-}));
+].map((stream, index) => {
+  const entry = {
+    id: index,
+    access: stream.channelId ? "YouTube Live" : "Open link",
+    ...stream,
+    embedUrl: youtubeLiveEmbed(stream.channelId)
+  };
+  return entry;
+});
 
 // Streams whose embed reported "video unavailable" — filtered out of the list.
 const deadStreams = new Set();
@@ -483,7 +994,6 @@ const briefingMeta = document.querySelector("#briefingMeta");
 const aiPulseList = document.querySelector("#aiPulseList");
 const aiPulseMeta = document.querySelector("#aiPulseMeta");
 const pulseTabs = document.querySelector("#pulseTabs");
-const streamList = document.querySelector("#streamList");
 const searchInput = document.querySelector("#searchInput");
 const categorySelect = document.querySelector("#categorySelect");
 const refreshButton = document.querySelector("#refreshButton");
@@ -550,7 +1060,7 @@ async function loadNews() {
 /* ---------- Translate-to-English (free, no signup: Google gtx + MyMemory fallback) ---------- */
 const translateCache = new Map(); // original text -> english text
 const translatePending = new Set();
-let translateOn = false;
+let translateOn = true; // auto-translate non-English headlines by default
 
 // Mostly-Latin text with no CJK/Cyrillic/Arabic/etc. is treated as English to skip a round trip.
 function looksEnglish(text) {
@@ -994,7 +1504,6 @@ function render() {
   const visible = filteredArticles();
   lastVisible = visible;
   renderFeed(visible);
-  renderStreams();
   renderMarkers(visible);
   highlightSelectedState(visible);
   feedTitle.textContent = selectedState ? `${selectedState} Headlines` : "Global Headlines";
@@ -1007,7 +1516,9 @@ function render() {
   if (translateOn) ensureFeedTranslations(visible);
 }
 
-function renderFeed(items) {
+function renderFeed(rawItems) {
+  // AI clustering: collapse near-duplicate headlines about the same event.
+  const items = clusterArticles(rawItems);
   if (!items.length) {
     feedList.innerHTML = `<p class="empty">No matching stories right now. Try a broader topic or refresh the feed.</p>`;
     return;
@@ -1016,8 +1527,12 @@ function renderFeed(items) {
   feedList.innerHTML = items
     .map(
       (article) => `
-        <a class="story${article.state === selectedState ? " is-selected" : ""}" href="${article.url}" target="_blank" rel="noreferrer">
-          <h3>${escapeHtml(displayTitle(article))}</h3>
+        <a class="story${article.state === selectedState ? " is-selected" : ""}${
+        article.dupes ? " has-dupes" : ""
+      }" href="${article.url}" target="_blank" rel="noreferrer">
+          <h3>${escapeHtml(displayTitle(article))}${
+        article.dupes ? `<span class="dupe-badge">+${article.dupes}</span>` : ""
+      }</h3>
           <div class="story-meta">
             <span class="pill">${escapeHtml(article.state)}</span>
             <span>${escapeHtml(article.source)}</span>
@@ -1199,86 +1714,199 @@ function renderBriefing(items) {
   briefingMeta.textContent = `Updated ${formatTime(new Date())}`;
 }
 
-let streamSignature = "";
-
-function renderStreams() {
-  const live = LIVE_STREAMS.filter((stream) => !deadStreams.has(stream.id));
-  // Only rebuild when the set actually changes, so iframes don't reload on every keystroke.
-  const signature = live.map((stream) => stream.id).join(",");
-  if (signature === streamSignature) return;
-  streamSignature = signature;
-
-  const groups = live.reduce((grouped, stream) => {
-    if (!grouped.has(stream.group)) grouped.set(stream.group, []);
-    grouped.get(stream.group).push(stream);
-    return grouped;
-  }, new Map());
-
-  streamList.innerHTML = [...groups]
-    .map(([group, streams]) => {
-      return `
-        <section class="stream-group">
-          <div class="stream-group-title">
-            <span>${escapeHtml(group)}</span>
-            <small>${streams.length}</small>
-          </div>
-          <div class="stream-group-grid">
-            ${streams.map(streamCardHtml).join("")}
-          </div>
-        </section>
-      `;
-    })
-    .join("");
-  scheduleStreamHealthCheck();
-}
-
-// Country of origin for each live channel.
+// Country of origin for each live channel (fallback when countryCode is not on the entry).
 const STREAM_COUNTRY = {
   "Al Jazeera English": "QA", "DW News": "DE", "France 24 English": "FR", "TRT World": "TR",
   "Times of Israel": "IL", "i24NEWS English": "IL", "The Kyiv Independent": "UA", "UATV English": "UA",
   "FREEDOM.LIVE": "UA", "Sky News": "GB", "Yahoo Finance": "US", "CNBC Television": "US",
   "Bloomberg Originals": "US", "ABC News": "US", "NBC News NOW": "US", "CBS News": "US",
   "LiveNOW from FOX": "US", "C-SPAN": "US", "PBS NewsHour": "US", "Bloomberg Television": "US",
-  Reuters: "GB", "The Weather Channel": "US", AccuWeather: "US", Euronews: "FR",
+  Reuters: "US", "The Weather Channel": "US", AccuWeather: "US", Euronews: "FR",
   "GB News": "GB", "Times Radio": "GB", CNA: "SG", WION: "IN", "NDTV 24x7": "IN", Firstpost: "IN",
   "NHK World-Japan": "JP", "Arirang News": "KR", CGTN: "CN", "Al Arabiya English": "AE",
   "ABC News Australia": "AU", eNCA: "ZA", "SABC News": "ZA", "CBC News": "CA", "TeleSUR English": "VE"
 };
 
-// Coordinates for anchoring each channel to its country of origin on the globe.
+// Centroids for anchoring globe live tiles (country/region codes).
 const STREAM_COORDS = {
-  QA: [25.3, 51.2], DE: [51.1, 10.4], FR: [46.6, 2.3], TR: [39.0, 35.2], IL: [31.5, 34.9],
-  UA: [48.4, 31.2], GB: [54.0, -2.0], US: [39.5, -98.4], SG: [1.35, 103.8], IN: [22.0, 79.0],
-  JP: [36.2, 138.3], KR: [36.5, 127.8], CN: [35.9, 104.2], AE: [24.0, 54.0], AU: [-25.7, 133.8],
-  ZA: [-29.0, 24.0], CA: [56.1, -106.3], VE: [6.4, -66.6]
+  QA: [25.3, 51.2], AE: [24.0, 54.0], IL: [31.5, 34.9], TR: [39.0, 35.2], UA: [48.4, 31.2],
+  DE: [51.1, 10.4], FR: [46.6, 2.3], GB: [54.0, -2.0], IE: [53.4, -8.2], ES: [40.4, -3.7],
+  IT: [41.9, 12.5], NO: [60.5, 8.5], PL: [52.1, 19.4], CZ: [49.8, 15.5], RO: [45.9, 24.9],
+  GR: [39.1, 21.8], US: [39.5, -98.4], CA: [56.1, -106.3], MX: [23.6, -102.5], VE: [6.4, -66.6],
+  BR: [-14.2, -51.9], AR: [-38.4, -63.6], CO: [4.6, -74.1], CL: [-35.7, -71.5],
+  SN: [14.5, -14.5], NG: [9.1, 8.7], ZA: [-29.0, 24.0], EG: [26.8, 30.8],
+  IN: [22.0, 79.0], PK: [30.4, 69.3], ID: [-2.5, 118.0], TH: [15.9, 100.9], SG: [1.35, 103.8],
+  CN: [35.9, 104.2], HK: [22.3, 114.2], TW: [23.7, 121.0], JP: [36.2, 138.3], KR: [36.5, 127.8],
+  AU: [-25.7, 133.8], NZ: [-41.3, 174.8]
 };
 
-// One representative live channel per country, anchored on the globe.
-const GLOBE_STREAMS = (() => {
-  const seen = new Set();
-  const out = [];
+// US state centroids for regional affiliate tiles.
+const US_STATE_COORDS = {
+  AL: [32.8, -86.8], AK: [64.2, -152.5], AZ: [34.2, -111.6], AR: [34.8, -92.2], CA: [36.8, -119.4],
+  CO: [39.0, -105.5], CT: [41.6, -72.7], DE: [39.0, -75.5], FL: [27.8, -81.7], GA: [32.7, -83.4],
+  HI: [20.8, -156.3], ID: [44.4, -114.6], IL: [40.0, -89.2], IN: [39.9, -86.3], IA: [42.0, -93.5],
+  KS: [38.5, -98.4], KY: [37.8, -85.7], LA: [31.0, -92.0], ME: [45.4, -69.2], MD: [39.0, -76.8],
+  MA: [42.4, -71.8], MI: [44.3, -85.4], MN: [46.3, -94.3], MS: [32.7, -89.7], MO: [38.5, -92.4],
+  MT: [47.0, -110.4], NE: [41.5, -99.8], NV: [39.4, -117.0], NH: [43.7, -71.6], NJ: [40.1, -74.7],
+  NM: [34.5, -106.0], NY: [43.0, -75.5], NC: [35.6, -79.4], ND: [47.5, -100.5], OH: [40.4, -82.8],
+  OK: [35.6, -97.5], OR: [44.0, -120.5], PA: [41.0, -77.2], RI: [41.7, -71.5], SC: [33.9, -81.0],
+  SD: [44.4, -100.2], TN: [35.8, -86.4], TX: [31.5, -99.4], UT: [39.3, -111.7], VT: [44.1, -72.7],
+  VA: [37.5, -78.7], WA: [47.4, -120.5], WV: [38.6, -80.6], WI: [44.6, -89.8], WY: [43.0, -107.5],
+  DC: [38.9, -77.0]
+};
+
+function globeAnchorJitter(index, total) {
+  if (total <= 1) return [0, 0];
+  const angle = (index / total) * Math.PI * 2;
+  const spread = Math.min(4.2, 1.4 + total * 0.35);
+  return [Math.cos(angle) * spread, Math.sin(angle) * spread];
+}
+
+function globeStreamLabel(stream) {
+  if (stream.usState) return `🇺🇸 ${stream.usState}`;
+  return `${flagEmoji(stream.code)} ${stream.code}`;
+}
+
+function buildGlobeStreamAnchors() {
+  // One marker per country/US-state — multiple channels from the same place share a
+  // single dot (no more ring of red dots over the US).
+  const buckets = new Map();
   LIVE_STREAMS.forEach((stream) => {
-    const code = STREAM_COUNTRY[stream.name];
-    const coords = code && STREAM_COORDS[code];
-    if (!code || !coords || seen.has(code) || !stream.embedUrl) return;
-    seen.add(code);
-    out.push({ ...stream, code, lat: coords[0], lng: coords[1] });
+    if (!stream.embedUrl || deadStreams.has(stream.id)) return;
+    const countryCode = stream.countryCode || STREAM_COUNTRY[stream.name];
+    let lat;
+    let lng;
+    let code;
+    let bucketKey;
+    if (stream.usState && US_STATE_COORDS[stream.usState]) {
+      [lat, lng] = US_STATE_COORDS[stream.usState];
+      code = stream.usState;
+      bucketKey = `US-${stream.usState}`;
+    } else if (countryCode && STREAM_COORDS[countryCode]) {
+      [lat, lng] = STREAM_COORDS[countryCode];
+      code = countryCode;
+      bucketKey = countryCode;
+    } else {
+      return;
+    }
+    if (!buckets.has(bucketKey)) {
+      buckets.set(bucketKey, { lat, lng, code, streams: [] });
+    }
+    buckets.get(bucketKey).streams.push(stream);
+  });
+
+  const out = [];
+  buckets.forEach((bucket) => {
+    const representative = bucket.streams[0];
+    out.push({
+      ...representative,
+      code: bucket.code,
+      lat: bucket.lat,
+      lng: bucket.lng,
+      channelCount: bucket.streams.length,
+      channels: bucket.streams
+    });
   });
   return out;
-})();
+}
+
+let globeStreamsCache = null;
+let globeStreamsCacheDirty = true;
+let streamPopupPinned = false;
+let streamPopupHideTimer;
+let mountedStreamPopupId = null;
+
+function invalidateGlobeStreamsCache() {
+  globeStreamsCacheDirty = true;
+}
 
 function liveGlobeStreams() {
-  return GLOBE_STREAMS.filter((stream) => !deadStreams.has(stream.id));
+  if (!globeStreamsCacheDirty && globeStreamsCache) return globeStreamsCache;
+  globeStreamsCache = buildGlobeStreamAnchors();
+  globeStreamsCacheDirty = false;
+  return globeStreamsCache;
+}
+
+function streamEmbedUrl(stream) {
+  return (stream.embedUrl || "").replace("autoplay=0", "autoplay=1");
+}
+
+function getStreamPopupHost() {
+  let host = document.getElementById("globeStreamPopup");
+  if (!host) {
+    host = document.createElement("div");
+    host.id = "globeStreamPopup";
+    host.className = "globe-stream-popup";
+    host.hidden = true;
+    host.innerHTML =
+      '<div class="gsp-head"><span class="gsp-label"></span><b class="gsp-name"></b><span class="gsp-live"><span class="live-dot"></span>LIVE</span></div>' +
+      '<div class="gsp-frame"></div>';
+    document.body.appendChild(host);
+    host.addEventListener("mouseenter", () => clearTimeout(streamPopupHideTimer));
+    host.addEventListener("mouseleave", () => scheduleCloseStreamPopup(220));
+  }
+  return host;
+}
+
+function positionStreamPopup(host, anchorEl) {
+  const rect = anchorEl.getBoundingClientRect();
+  const width = 272;
+  const left = Math.max(10, Math.min(window.innerWidth - width - 10, rect.left + rect.width / 2 - width / 2));
+  const top = Math.max(72, rect.top - 10);
+  host.style.width = `${width}px`;
+  host.style.left = `${left}px`;
+  host.style.top = `${top}px`;
+}
+
+function scheduleCloseStreamPopup(delay = 240) {
+  clearTimeout(streamPopupHideTimer);
+  streamPopupHideTimer = setTimeout(closeGlobeStreamPopup, delay);
+}
+
+function closeGlobeStreamPopup(force = false) {
+  if (streamPopupPinned && !force) return;
+  clearTimeout(streamPopupHideTimer);
+  const host = document.getElementById("globeStreamPopup");
+  if (!host) return;
+  host.hidden = true;
+  const frame = host.querySelector(".gsp-frame");
+  if (frame) frame.innerHTML = "";
+  mountedStreamPopupId = null;
+  if (force) streamPopupPinned = false;
+}
+
+function openGlobeStreamPopup(stream, anchorEl, options = {}) {
+  if (!stream?.embedUrl || !anchorEl) return;
+  streamPopupPinned = Boolean(options.pinned);
+  clearTimeout(streamPopupHideTimer);
+  const host = getStreamPopupHost();
+  host.querySelector(".gsp-label").textContent = globeStreamLabel(stream);
+  host.querySelector(".gsp-name").textContent = stream.name;
+  positionStreamPopup(host, anchorEl);
+  const frame = host.querySelector(".gsp-frame");
+  const embedUrl = streamEmbedUrl(stream);
+  if (mountedStreamPopupId !== stream.id) {
+    frame.innerHTML = "";
+    mountGlobeStreamIframe(frame, stream.id, embedUrl);
+    mountedStreamPopupId = stream.id;
+  }
+  host.hidden = false;
 }
 
 function buildGlobeStream(stream) {
-  const el = document.createElement("div");
-  el.className = "globe-stream";
-  el.dataset.streamId = stream.id;
-  el.innerHTML =
-    `<div class="gs-head"><span>${flagEmoji(stream.code)} ${escapeHtml(stream.code)}</span>` +
-    `<b>${escapeHtml(stream.name)}</b><span class="gs-live"><span class="live-dot"></span>LIVE</span></div>` +
-    `<div class="gs-frame" data-embed="${escapeHtml(stream.embedUrl.replace("autoplay=0", "autoplay=1"))}"></div>`;
+  const el = document.createElement("button");
+  el.type = "button";
+  el.className = "globe-stream-dot";
+  el.dataset.streamId = String(stream.id);
+  el.title = stream.name;
+  el.setAttribute("aria-label", `${stream.name} live stream`);
+  el.addEventListener("mouseenter", () => {
+    if (spotlightActive) return;
+    openGlobeStreamPopup(stream, el);
+  });
+  el.addEventListener("mouseleave", () => {
+    if (!streamPopupPinned) scheduleCloseStreamPopup();
+  });
   el.addEventListener("click", (event) => {
     if (spotlightActive) {
       event.preventDefault();
@@ -1291,72 +1919,8 @@ function buildGlobeStream(stream) {
   return el;
 }
 
-function streamCardHtml(stream) {
-  const code = STREAM_COUNTRY[stream.name] || "US";
-  return `
-        <article class="stream-card" data-card="${stream.id}" style="--stream-accent: ${stream.accent}">
-          <span class="macbook-preview">
-            <span class="macbook-lid">
-              <span class="macbook-bar">
-                <i></i>
-                <i></i>
-                <i></i>
-              </span>
-              <span class="preview-screen stream-iframe-screen">
-                <span class="preview-glow"></span>
-                ${streamPlayerHtml(stream)}
-                <span class="preview-live">
-                  <span class="live-dot"></span>
-                  LIVE
-                </span>
-              </span>
-            </span>
-            <span class="macbook-base"></span>
-          </span>
-          <span class="stream-info">
-            <span class="stream-main">
-              <strong>${escapeHtml(stream.name)}</strong>
-              <small>${escapeHtml(stream.preview)}</small>
-            </span>
-            <span class="stream-actions">
-              <span class="stream-flag" title="${escapeHtml(code)}">${flagEmoji(code)} ${escapeHtml(code)}</span>
-              <span class="stream-access">${escapeHtml(stream.access)}</span>
-              <a class="stream-open" href="${escapeHtml(stream.url)}" target="_blank" rel="noreferrer">Open</a>
-            </span>
-          </span>
-        </article>
-      `;
-}
-
-function streamPlayerHtml(stream) {
-  if (!stream.embedUrl) {
-    return `
-      <span class="stream-fallback">
-        <strong>${escapeHtml(stream.name)}</strong>
-        <small>${HAS_HTTP_ORIGIN ? "Embed unavailable. Open the live page." : "Run from localhost to enable embeds."}</small>
-      </span>
-    `;
-  }
-
-  return `
-    <iframe
-      id="stream-frame-${stream.id}"
-      class="stream-frame"
-      src="${stream.embedUrl}"
-      title="${escapeHtml(stream.name)} live stream"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-      referrerpolicy="strict-origin-when-cross-origin"
-    ></iframe>
-  `;
-}
-
-/* ---------- Remove streams whose embed reports "video unavailable" ----------
- * Uses the YouTube IFrame API: any player that fires onError (100/101/150 =
- * removed / embedding disabled / not live) gets pulled from the list. */
+/* ---------- Drop globe tiles whose YouTube embed reports unavailable (IFrame API) ---------- */
 let ytApiPromise;
-let streamHealthTimer;
 
 function loadYouTubeApi() {
   if (ytApiPromise) return ytApiPromise;
@@ -1372,49 +1936,6 @@ function loadYouTubeApi() {
     document.head.appendChild(tag);
   });
   return ytApiPromise;
-}
-
-function scheduleStreamHealthCheck() {
-  if (!HAS_HTTP_ORIGIN) return; // embeds (and the API) only work over http(s)
-  clearTimeout(streamHealthTimer);
-  streamHealthTimer = setTimeout(checkStreamHealth, 1500);
-}
-
-async function checkStreamHealth() {
-  await loadYouTubeApi();
-  document.querySelectorAll(".stream-frame").forEach((iframe) => {
-    if (iframe.dataset.checked || !iframe.id) return;
-    iframe.dataset.checked = "1";
-    try {
-      new window.YT.Player(iframe.id, {
-        events: { onError: () => markStreamDead(iframe) }
-      });
-    } catch (error) {
-      /* ignore players that can't be attached */
-    }
-  });
-}
-
-function markStreamDead(iframe) {
-  const card = iframe.closest("[data-card]");
-  if (!card) return;
-  const id = Number(card.dataset.card);
-  if (!deadStreams.has(id)) deadStreams.add(id);
-  const section = card.closest(".stream-group");
-  card.remove();
-  if (section) {
-    const remaining = section.querySelectorAll(".stream-card").length;
-    if (!remaining) section.remove();
-    else {
-      const badge = section.querySelector(".stream-group-title small");
-      if (badge) badge.textContent = String(remaining);
-    }
-  }
-  // Keep the signature in sync so a later re-render doesn't reload everything.
-  streamSignature = LIVE_STREAMS.filter((stream) => !deadStreams.has(stream.id))
-    .map((stream) => stream.id)
-    .join(",");
-  refreshGlobeStreams();
 }
 
 // Health-check a globe-anchored tile's iframe; drop the tile if its embed errors.
@@ -1433,18 +1954,13 @@ async function checkGlobeFrame(iframe, streamId) {
 function markGlobeStreamDead(streamId) {
   if (deadStreams.has(streamId)) return;
   deadStreams.add(streamId);
+  invalidateGlobeStreamsCache();
   refreshGlobeStreams();
-  // The same channel may also be in the sidebar list — rebuild it too.
-  streamSignature = "";
-  renderStreams();
 }
 
 function refreshGlobeStreams() {
   if (!globe) return;
-  if (typeof tvOn !== "undefined" && tvOn) {
-    globe.htmlElementsData(liveGlobeStreams());
-  }
-  globe.arcsData(webArcs()); // keep the web in sync as streams come and go
+  // No map-anchored markers; only keep the spotlight tour queue in sync.
   if (spotlightActive && spotlightStreamQueue.length) {
     const currentId = spotlightStreamQueue[spotlightStreamIndex]?.id;
     spotlightStreamQueue = buildSpotlightStreamQueue();
@@ -1463,8 +1979,7 @@ function refreshGlobeStreams() {
 function retestStreams() {
   if (!deadStreams.size) return;
   deadStreams.clear();
-  streamSignature = ""; // force a rebuild so the health check re-attaches
-  renderStreams();
+  invalidateGlobeStreamsCache();
   refreshGlobeStreams();
   setStatus(`Re-tested live streams ${formatTime(new Date())}`);
 }
@@ -1590,7 +2105,7 @@ function updateSpotlightReadout() {
   const stream = spotlightStreamQueue[spotlightStreamIndex];
   const total = spotlightStreamQueue.length;
   tourStatus.textContent = stream
-    ? `${stream.name} · ${spotlightStreamIndex + 1}/${total} · ◀ ▶ or tap a tile`
+    ? `${stream.name} · ${spotlightStreamIndex + 1}/${total} · ◀ ▶ or tap a dot`
     : total
       ? "Loading globe streams…"
       : "No live streams on the globe right now";
@@ -1624,11 +2139,11 @@ function mountGlobeStreamIframe(frame, streamId, embedUrl) {
   iframe.allow = "autoplay; encrypted-media; picture-in-picture";
   iframe.referrerPolicy = "strict-origin-when-cross-origin";
   frame.appendChild(iframe);
-  checkGlobeFrame(iframe, streamId);
+  checkGlobeFrame(iframe, streamId); // remove the marker if this embed is a bad link
 }
 
 function clearGlobeStreamHighlight() {
-  globeEl.querySelectorAll(".globe-stream.gs-spotlight").forEach((el) => el.classList.remove("gs-spotlight"));
+  globeEl.querySelectorAll(".globe-stream-dot.gs-spotlight").forEach((el) => el.classList.remove("gs-spotlight"));
 }
 
 function ensureGlobeTvOn() {
@@ -1640,17 +2155,17 @@ function ensureGlobeTvOn() {
 
 function focusGlobeStream(stream) {
   if (!stream || !globe) return;
+  closeGlobeStreamPopup(true);
   const idx = spotlightStreamQueue.findIndex((item) => item.id === stream.id);
   if (idx >= 0) spotlightStreamIndex = idx;
   document.body.classList.add("spotlight-streams");
   clearGlobeStreamHighlight();
-  const tile = globeEl.querySelector(`.globe-stream[data-stream-id="${stream.id}"]`);
-  if (tile) {
-    tile.classList.add("gs-spotlight");
-    const frame = tile.querySelector(".gs-frame");
-    if (frame && frame.dataset.embed) mountGlobeStreamIframe(frame, stream.id, frame.dataset.embed);
+  const dot = globeEl.querySelector(`.globe-stream-dot[data-stream-id="${stream.id}"]`);
+  if (dot) {
+    dot.classList.add("gs-spotlight");
+    openGlobeStreamPopup(stream, dot, { pinned: true });
   }
-  globe.pointOfView({ lat: stream.lat, lng: stream.lng, altitude: 1.52 }, 1300);
+  globe.pointOfView({ lat: stream.lat, lng: stream.lng, altitude: 1.52 }, 900);
   showSpotlightPreviewForStream(stream);
   updateSpotlightReadout();
 }
@@ -1698,7 +2213,7 @@ const COUNTRY_STREAM = {
   India: "WION",
   Japan: "NHK World-Japan",
   "South Korea": "Arirang News",
-  "United Kingdom": "Sky News",
+  "United Kingdom": "BBC News",
   "United States of America": "ABC News",
   Singapore: "CNA",
   Australia: "ABC News Australia",
@@ -1709,13 +2224,54 @@ const COUNTRY_STREAM = {
   Turkey: "TRT World",
   Qatar: "Al Jazeera English",
   "United Arab Emirates": "Al Arabiya English",
-  Venezuela: "TeleSUR English"
+  Venezuela: "TeleSUR English",
+  Pakistan: "Geo News",
+  Brazil: "GloboNews",
+  Mexico: "Milenio Noticias",
+  Argentina: "Todo Noticias",
+  Colombia: "Caracol Noticias",
+  Chile: "TVN Chile",
+  Nigeria: "Channels TV",
+  "New Zealand": "1News",
+  Ireland: "RTÉ News",
+  Spain: "RTVE Noticias",
+  Italy: "Rai News 24",
+  Norway: "NRK News",
+  Poland: "TVN24",
+  Taiwan: "TaiwanPlus",
+  "Hong Kong": "SCMP"
+};
+
+// US state → preferred local live affiliate for spotlight preview.
+const US_STATE_STREAM = {
+  Texas: "KHOU 11",
+  California: "KCRA 3",
+  Florida: "WPLG Local 10",
+  Massachusetts: "WCVB Channel 5",
+  "New York": "NBC New York",
+  Michigan: "WDIV Local 4",
+  Minnesota: "KARE 11",
+  Colorado: "9NEWS Denver",
+  Arizona: "Arizona's Family",
+  Washington: "KING 5 Seattle",
+  Georgia: "WSB-TV",
+  Tennessee: "WTVF NewsChannel 5"
 };
 
 function streamForCountry(name) {
-  const wanted = COUNTRY_STREAM[name];
-  if (!wanted) return null; // no local channel for this country → no preview
-  return LIVE_STREAMS.find((s) => s.name === wanted && s.embedUrl && !deadStreams.has(s.id)) || null;
+  const live = (n) => LIVE_STREAMS.find((s) => s.name === n && s.embedUrl && !deadStreams.has(s.id));
+  // 1) The preferred local channel, if it's available.
+  const wanted = COUNTRY_STREAM[name] || US_STATE_STREAM[name];
+  if (wanted && live(wanted)) return live(wanted);
+  // 2) Fallback: any working channel that originates from the same country.
+  const code = stateByName.get(name.toLowerCase())?.code;
+  if (code && code !== "-99") {
+    const alt = LIVE_STREAMS.find(
+      (s) => STREAM_COUNTRY[s.name] === code && s.embedUrl && !deadStreams.has(s.id)
+    );
+    if (alt) return alt;
+  }
+  return null;
 }
 
 function activateSpotlightFrame(stream) {
@@ -1734,6 +2290,7 @@ function activateSpotlightFrame(stream) {
     frame.allowFullscreen = true;
     frame.referrerPolicy = "strict-origin-when-cross-origin";
     container.appendChild(frame);
+    checkGlobeFrame(frame, stream.id); // drop bad links from the tour
   }
   frame.classList.add("active");
   panel.hidden = false;
@@ -1791,12 +2348,14 @@ function stopSpotlightTour() {
   spotlightActive = false;
   spotlightStreamQueue = [];
   spotlightStreamIndex = 0;
+  streamPopupPinned = false;
   if (spotlightTimer) {
     clearInterval(spotlightTimer);
     spotlightTimer = undefined;
   }
   document.body.classList.remove("spotlight-streams");
   clearGlobeStreamHighlight();
+  closeGlobeStreamPopup();
   if (globe) globe.controls().autoRotate = true;
   hideSpotlightPreview();
   updateSpotlightReadout();
@@ -1865,14 +2424,16 @@ setInterval(() => {
   loadPulse();
   if (quakeOn) loadQuakes();
   if (alertOn) loadAlerts();
+  if (flightOn) loadFlights();
+  if (shipOn) loadShips();
+  if (satOn) loadSatellites();
 }, AUTO_REFRESH_MS);
 
 applyHashToState();
-loadNews();
-loadPulse();
+Promise.all([loadNews(), loadPulse()]);
 
-// Re-test every stream link once after 20s, so slow-loading channels can come back.
-setTimeout(retestStreams, 20000);
+// Re-test dead stream markers after a long delay (no YouTube API on initial load).
+setTimeout(retestStreams, 120000);
 
 /* ============================================================================
  *  ENHANCEMENTS: 3D globe · AI news radio · quake/alert overlays · news arcs · PWA
@@ -1881,6 +2442,19 @@ setTimeout(retestStreams, 20000);
 let lastVisible = [];
 let quakes = [];
 let alertPoints = [];
+let flights = [];
+let ships = [];
+let satellites = [];
+
+const MAX_FLIGHT_MARKERS = 900;
+const MAX_SHIP_MARKERS = 650;
+const MAX_SATELLITES = 48;
+// Vendored locally (./textures) so the 3D geography works without a CDN / offline.
+const GLOBE_IMAGE_DEFAULT = "./textures/earth-night.jpg";
+const GLOBE_IMAGE_SAT = "./textures/earth-blue-marble.jpg";
+// Topographic relief (mountains/terrain) + ocean specular for real 3D geography.
+const GLOBE_BUMP = "./textures/earth-topology.png";
+const GLOBE_WATER = "./textures/earth-water.png";
 
 const tierColors = { hot: "#ff4138", warm: "#e1a23a", cool: "#5796ff" };
 function tierColor(count) {
@@ -1909,43 +2483,25 @@ function geoCounts(items) {
   return out.sort((a, b) => b.count - a.count);
 }
 
-// A never-ending web: connect every live-preview location to all the others.
-function webArcs() {
-  const nodes = liveGlobeStreams();
-  const arcs = [];
-  for (let i = 0; i < nodes.length; i += 1) {
-    for (let j = i + 1; j < nodes.length; j += 1) {
-      arcs.push({
-        startLat: nodes[i].lat,
-        startLng: nodes[i].lng,
-        endLat: nodes[j].lat,
-        endLng: nodes[j].lng,
-        from: nodes[i].name,
-        to: nodes[j].name
-      });
-    }
-  }
-  return arcs;
-}
-
 /* ---------- 3D globe (lazy-loaded globe.gl, vendored / offline-capable) ---------- */
 const mapEl = document.querySelector("#map");
 const globeEl = document.querySelector("#globe");
 const viewToggle = document.querySelector("#viewToggle");
 let globe = null;
 let globeMode = false;
-let scriptPromise = null;
+const scriptPromises = new Map();
 
 function loadScriptOnce(src) {
-  if (scriptPromise) return scriptPromise;
-  scriptPromise = new Promise((resolve, reject) => {
+  if (scriptPromises.has(src)) return scriptPromises.get(src);
+  const promise = new Promise((resolve, reject) => {
     const tag = document.createElement("script");
     tag.src = src;
     tag.onload = resolve;
     tag.onerror = () => reject(new Error(`Failed to load ${src}`));
     document.head.appendChild(tag);
   });
-  return scriptPromise;
+  scriptPromises.set(src, promise);
+  return promise;
 }
 
 async function ensureGlobe() {
@@ -1955,35 +2511,51 @@ async function ensureGlobe() {
     .Globe()(globeEl)
     .backgroundColor("rgba(0,0,0,0)")
     .showGlobe(true)
-    .showGraticules(true)
+    .showGraticules(false)
     .showAtmosphere(true)
     .atmosphereColor("#43e3ff")
     .atmosphereAltitude(0.24)
-    .hexPolygonsData(WORLD_GEOJSON.features)
-    .hexPolygonResolution(3)
-    .hexPolygonMargin(0.28)
-    .hexPolygonUseDots(true)
-    .hexPolygonColor((d) => CONTINENT_COLORS[d.properties && d.properties.continent] || "rgba(120, 200, 230, 0.5)")
+    .hexPolygonsData([])
     .pointLat("lat")
     .pointLng("lng")
-    .pointAltitude((d) => (d.kind === "alert" ? 0.12 : Math.min(0.55, 0.06 + d.count * 0.035)))
-    .pointRadius((d) => (d.kind === "alert" ? 0.3 : 0.45))
-    .pointColor((d) =>
-      d.kind === "alert" ? (d.severe ? "#ff4138" : "#f5a623") : tierColor(d.count)
-    )
-    .pointLabel((d) =>
-      d.kind === "alert"
-        ? `⚠ ${d.name}`
-        : `${d.name}: ${d.count} ${d.count === 1 ? "story" : "stories"}`
-    )
-    .pointsTransitionDuration(600)
-    .arcColor(() => ["rgba(255,65,56,0.9)", "rgba(47,208,196,0.9)"])
-    .arcDashLength(0.5)
-    .arcDashGap(0.25)
-    .arcDashAnimateTime(1600)
-    .arcStroke(0.5)
-    .arcAltitudeAutoScale(0.4)
-    .arcLabel((d) => `${d.from} → ${d.to}`)
+    .pointAltitude((d) => {
+      if (d.kind === "alert") return 0.12;
+      if (d.kind === "flight") return 0.03 + Math.min(0.22, (d.alt || 0) / 140000);
+      if (d.kind === "ship") return 0.025;
+      if (d.kind === "satellite") return 0.14 + Math.min(0.4, (d.alt || 400) / 2500);
+      return Math.min(0.55, 0.06 + d.count * 0.035);
+    })
+    .pointRadius((d) => {
+      if (d.kind === "alert") return 0.3;
+      if (d.kind === "flight") return 0.11;
+      if (d.kind === "ship") return 0.13;
+      if (d.kind === "satellite") return 0.2;
+      return 0.45;
+    })
+    .pointColor((d) => {
+      if (d.kind === "alert") return d.severe ? "#ff4138" : "#f5a623";
+      if (d.kind === "flight") return "#4dd0e1";
+      if (d.kind === "ship") return "#26a69a";
+      if (d.kind === "satellite") return "#b388ff";
+      return tierColor(d.count);
+    })
+    .pointLabel((d) => {
+      if (d.kind === "alert") return `⚠ ${d.name}`;
+      if (d.kind === "flight") {
+        const alt = Number.isFinite(d.alt) ? ` · ${Math.round(d.alt)} m` : "";
+        return `✈ ${d.callsign || d.icao}${alt}`;
+      }
+      if (d.kind === "ship") {
+        const spd = Number.isFinite(d.sog) ? ` · ${d.sog.toFixed(1)} kn` : "";
+        return `⚓ ${d.mmsi}${spd}`;
+      }
+      if (d.kind === "satellite") {
+        const alt = Number.isFinite(d.alt) ? ` · ${Math.round(d.alt)} km` : "";
+        return `🛰 ${d.name}${alt}`;
+      }
+      return `${d.name}: ${d.count} ${d.count === 1 ? "story" : "stories"}`;
+    })
+    .pointsTransitionDuration(280)
     // Quake ripples are red; the busiest country gets a teal "breaking" pulse.
     .ringColor((d) =>
       d.kind === "breaking" ? (t) => `rgba(47,208,196,${1 - t})` : (t) => `rgba(255,90,80,${1 - t})`
@@ -2005,27 +2577,21 @@ async function ensureGlobe() {
     })
     // Click a country bar to filter the feed and orbit to it.
     .onPointClick((d) => {
-      if (d && !d.kind) selectCountry(d.name);
-    })
-    // Live-stream iframes anchored to each channel's country of origin.
-    .htmlElementsData(liveGlobeStreams())
-    .htmlLat("lat")
-    .htmlLng("lng")
-    .htmlAltitude(0.02)
-    .htmlElement(buildGlobeStream)
-    .htmlElementVisibilityModifier((el, isVisible) => {
-      // Only the front-facing channels are shown; their iframe loads on first reveal.
-      el.style.opacity = isVisible ? "1" : "0";
-      el.style.pointerEvents = isVisible ? "auto" : "none";
-      const frame = el.querySelector(".gs-frame");
-      if (isVisible && frame && frame.dataset.embed) {
-        mountGlobeStreamIframe(frame, Number(el.dataset.streamId), frame.dataset.embed);
+      if (!d || !d.kind) {
+        if (d && d.name) selectCountry(d.name);
+        return;
       }
-    });
+      if (d.kind === "flight" || d.kind === "ship" || d.kind === "satellite") {
+        globe.pointOfView({ lat: d.lat, lng: d.lng, altitude: d.kind === "satellite" ? 1.4 : 1.65 }, 900);
+      }
+    })
+    // No map-anchored stream markers — the spotlight tour still rotates through the
+    // streams (orbit + preview), there are just no dots pinned to the globe.
+    .htmlElementsData([]);
 
-  // Dark ocean material and a slow auto-spin for the cinematic feel.
+  // Keep the Earth texture at full brightness (no dark tint) so the terrain reads.
   const material = globe.globeMaterial();
-  if (material && material.color && material.color.set) material.color.set("#0a1622");
+  if (material && material.color && material.color.set) material.color.set("#ffffff");
   globe.controls().autoRotate = true;
   globe.controls().autoRotateSpeed = 0.45;
 
@@ -2037,10 +2603,276 @@ async function ensureGlobe() {
     if (!spotlightActive) globe.controls().autoRotate = true;
   });
 
-  globe.arcsData(webArcs()); // the never-ending intersecting web between live previews
+  globe.arcsData([]);
+
+  // Pull the camera back slightly so the sphere reads a bit smaller in-frame.
+  globe.pointOfView({ lat: 18, lng: 12, altitude: 2.15 }, 0);
+  globe.globeImageUrl(satImageryOn ? GLOBE_IMAGE_SAT : GLOBE_IMAGE_DEFAULT);
+
+  // 3D geography: topographic bump (terrain relief) + ocean specular highlight.
+  // Wrapped so a relief failure can never break globe init (which would drop to 2D).
+  try {
+    globe.bumpImageUrl(GLOBE_BUMP);
+    applyGlobeRelief();
+  } catch (error) {
+    /* relief is a visual enhancement; the textured globe still renders without it */
+  }
 
   sizeGlobe();
   return globe;
+}
+
+// Real 3D terrain: displace the globe's vertices outward from the topographic
+// heightmap so mountains physically stick out (the silhouette is no longer a perfect
+// sphere). Requires a high-res sphere mesh + a displacementMap.
+function applyGlobeRelief() {
+  if (!globe) return;
+  const material = globe.globeMaterial();
+  if (!material) return;
+
+  if (material.bumpScale !== undefined) material.bumpScale = 14;
+  if (material.shininess !== undefined) material.shininess = 6;
+  if (material.specular && material.specular.set) material.specular.set("#14304a");
+
+  // Find the globe surface mesh and rebuild its geometry at high resolution so the
+  // displacement has enough vertices to form peaks. Prefer the mesh using the globe
+  // material; fall back to the largest sphere mesh in the scene.
+  const scene = globe.scene && globe.scene();
+  let globeMesh = null;
+  let texturedSphere = null;
+  if (scene && scene.traverse) {
+    scene.traverse((obj) => {
+      if (!obj.isMesh || !obj.geometry || !obj.geometry.parameters) return;
+      if (obj.geometry.parameters.radius === undefined) return; // sphere-like only
+      if (obj.material === material) globeMesh = obj;
+      // Fallback candidate: a textured sphere that isn't the (larger) atmosphere shell.
+      if (!texturedSphere && obj.material && (obj.material.map || obj.material.bumpMap)) {
+        texturedSphere = obj;
+      }
+    });
+  }
+  if (!globeMesh) globeMesh = texturedSphere;
+  if (globeMesh) {
+    try {
+      const params = globeMesh.geometry.parameters;
+      if ((params.widthSegments || 0) < 200) {
+        const radius = params.radius || 100;
+        const SphereGeometry = globeMesh.geometry.constructor; // borrow THREE.SphereGeometry
+        globeMesh.geometry.dispose();
+        globeMesh.geometry = new SphereGeometry(radius, 360, 360);
+      }
+    } catch (error) {
+      /* keep the default geometry if rebuild fails */
+    }
+  }
+
+  // Bake the heightmap into the geometry on the CPU and recompute vertex normals, so the
+  // displaced mountains self-shade (real 3D), instead of the GPU displacementMap which
+  // keeps the original sphere normals (flat-looking peaks).
+  bakeTerrainRelief(globeMesh, material);
+  enhanceGlobe3D(globeMesh, material);
+}
+
+// Subsolar point (where the sun is directly overhead) for the current time.
+function subsolarLatLng(date) {
+  const d = date || new Date();
+  const start = Date.UTC(d.getUTCFullYear(), 0, 0);
+  const dayOfYear = Math.floor((d - start) / 86400000);
+  const lat = -23.44 * Math.cos((2 * Math.PI / 365) * (dayOfYear + 10)); // solar declination
+  const utcHours = d.getUTCHours() + d.getUTCMinutes() / 60 + d.getUTCSeconds() / 3600;
+  const lng = 180 - utcHours * 15; // sun over lng 0 at 12:00 UTC, 15°/hr
+  return { lat, lng };
+}
+
+let sunVec = null;
+
+// Real sun + rotating clouds + ocean glint + a day/night terminator with city lights
+// that only glow on the dark side. Borrows THREE constructors from live objects if
+// window.THREE isn't exposed, and is fully guarded so it can never break the globe.
+function enhanceGlobe3D(globeMesh, material) {
+  try {
+    const THREE = window.THREE;
+    const lights = (globe.lights && globe.lights()) || [];
+    const sun = lights.find((l) => l && l.isDirectionalLight) || null;
+    const ambient = lights.find((l) => l && l.isAmbientLight);
+    if (ambient) ambient.intensity = 0.28; // dark night side
+    if (sun) sun.intensity = 1.7;
+
+    const Vec3 = (THREE && THREE.Vector3) || (sun && sun.position && sun.position.constructor) || null;
+
+    function updateSun() {
+      if (!globe.getCoords || !Vec3) return;
+      const ss = subsolarLatLng();
+      const p = globe.getCoords(ss.lat, ss.lng, 2);
+      if (!p) return;
+      if (!sunVec) sunVec = new Vec3();
+      sunVec.set(p.x, p.y, p.z);
+      if (sun && sun.position && sun.position.copy) sun.position.copy(sunVec).multiplyScalar(3);
+    }
+    updateSun();
+    setInterval(updateSun, 60000); // keep the terminator current
+
+    const textureCtor = () =>
+      (THREE && THREE.Texture) ||
+      (material.bumpMap && material.bumpMap.constructor) ||
+      (material.map && material.map.constructor) ||
+      null;
+
+    const makeTexture = (src, onReady) => {
+      const Ctor = textureCtor();
+      if (!Ctor) return false;
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => {
+        const tex = new Ctor();
+        tex.image = img;
+        tex.needsUpdate = true;
+        onReady(tex);
+      };
+      img.src = src;
+      return true;
+    };
+
+    const setup = () => {
+      if (!textureCtor()) {
+        setTimeout(setup, 200);
+        return;
+      }
+
+      // Ocean sun-glint: specular highlight only on water.
+      makeTexture(GLOBE_WATER, (tex) => {
+        material.specularMap = tex;
+        if (material.specular && material.specular.set) material.specular.set("#2a4a66");
+        if (material.shininess !== undefined) material.shininess = 18;
+        material.needsUpdate = true;
+      });
+
+      // Day/night city lights via shader injection: add the night texture only where the
+      // surface faces away from the sun (real terminator).
+      makeTexture(GLOBE_IMAGE_DEFAULT, (nightTex) => {
+        if (!sunVec) return;
+        material.emissiveMap = null;
+        if (material.emissiveIntensity !== undefined) material.emissiveIntensity = 0;
+        material.onBeforeCompile = (shader) => {
+          shader.uniforms.uSunDir = { value: sunVec };
+          shader.uniforms.tNightMap = { value: nightTex };
+          shader.vertexShader =
+            "varying vec3 vWNormal;\nvarying vec2 vNUv;\n" +
+            shader.vertexShader.replace(
+              "#include <begin_vertex>",
+              "#include <begin_vertex>\n  vWNormal = normalize(mat3(modelMatrix) * normal);\n  vNUv = uv;"
+            );
+          shader.fragmentShader =
+            "uniform vec3 uSunDir;\nuniform sampler2D tNightMap;\nvarying vec3 vWNormal;\nvarying vec2 vNUv;\n" +
+            shader.fragmentShader.replace(
+              "#include <dithering_fragment>",
+              "  float sd = dot(normalize(vWNormal), normalize(uSunDir));\n" +
+                "  float night = smoothstep(0.12, -0.22, sd);\n" +
+                "  vec3 city = texture2D(tNightMap, vNUv).rgb;\n" +
+                "  gl_FragColor.rgb += city * night * 2.4;\n" +
+                "  #include <dithering_fragment>"
+            );
+        };
+        material.needsUpdate = true;
+      });
+
+      // Rotating semi-transparent cloud shell just above the terrain.
+      if (!(globeMesh.children || []).some((c) => c.name === "cloud-layer")) {
+        const MeshCtor = (THREE && THREE.Mesh) || globeMesh.constructor;
+        const SphereCtor = (THREE && THREE.SphereGeometry) || globeMesh.geometry.constructor;
+        const MatCtor = (THREE && THREE.MeshPhongMaterial) || globeMesh.material.constructor;
+        const radius = (globeMesh.geometry.parameters && globeMesh.geometry.parameters.radius) || 100;
+        makeTexture("./textures/clouds.png", (tex) => {
+          const cloudMat = new MatCtor({ alphaMap: tex, transparent: true, depthWrite: false, opacity: 0.85 });
+          if (cloudMat.color && cloudMat.color.set) cloudMat.color.set("#ffffff");
+          const cloudMesh = new MeshCtor(new SphereCtor(radius * 1.02, 96, 96), cloudMat);
+          cloudMesh.name = "cloud-layer";
+          if (globeMesh.add) globeMesh.add(cloudMesh);
+          else if (globeMesh.parent && globeMesh.parent.add) globeMesh.parent.add(cloudMesh);
+          const spin = () => {
+            cloudMesh.rotation.y += 0.00022;
+            requestAnimationFrame(spin);
+          };
+          spin();
+        });
+      }
+    };
+
+    setup();
+  } catch (error) {
+    /* enhancements are optional; the terrain globe still renders without them */
+  }
+}
+
+function bakeTerrainRelief(globeMesh, material) {
+  if (!globeMesh || !globeMesh.geometry || !globeMesh.geometry.attributes) {
+    shaderDisplaceFallback(material);
+    return;
+  }
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.onerror = () => shaderDisplaceFallback(material);
+  img.onload = () => {
+    try {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+      const px = ctx.getImageData(0, 0, img.width, img.height).data;
+      const geo = globeMesh.geometry;
+      const pos = geo.attributes.position;
+      const uv = geo.attributes.uv;
+      if (!pos || !uv) {
+        shaderDisplaceFallback(material);
+        return;
+      }
+      const radius = (geo.parameters && geo.parameters.radius) || 100;
+      const scale = radius * 0.09; // exaggerated relief (~9% of radius)
+      const w = img.width;
+      const h = img.height;
+      for (let i = 0; i < pos.count; i += 1) {
+        let sx = Math.floor(uv.getX(i) * (w - 1));
+        let sy = Math.floor((1 - uv.getY(i)) * (h - 1)); // texture is flipped vertically
+        if (sx < 0) sx = 0;
+        else if (sx >= w) sx = w - 1;
+        if (sy < 0) sy = 0;
+        else if (sy >= h) sy = h - 1;
+        const height = px[(sy * w + sx) * 4] / 255; // grayscale elevation 0..1
+        const x = pos.getX(i);
+        const y = pos.getY(i);
+        const z = pos.getZ(i);
+        const len = Math.sqrt(x * x + y * y + z * z) || 1;
+        const r = radius + height * height * scale; // square it to flatten plains, sharpen peaks
+        pos.setXYZ(i, (x / len) * r, (y / len) * r, (z / len) * r);
+      }
+      pos.needsUpdate = true;
+      geo.computeVertexNormals(); // real normals → proper mountain shading
+      material.displacementMap = null;
+      material.displacementScale = 0;
+      material.needsUpdate = true;
+    } catch (error) {
+      shaderDisplaceFallback(material); // tainted canvas etc.
+    }
+  };
+  img.src = GLOBE_BUMP;
+}
+
+// Fallback: GPU displacement (no recomputed normals) if CPU baking isn't possible.
+function shaderDisplaceFallback(material) {
+  let tries = 0;
+  const interval = setInterval(() => {
+    tries += 1;
+    if (material.bumpMap) {
+      material.displacementMap = material.bumpMap;
+      material.displacementScale = 5.5;
+      material.displacementBias = -0.8;
+      material.needsUpdate = true;
+      clearInterval(interval);
+    } else if (tries > 60) {
+      clearInterval(interval);
+    }
+  }, 150);
 }
 
 function flyToSelected() {
@@ -2124,19 +2956,21 @@ function geoScopeItems() {
 }
 
 /* ---------- one entry point to refresh every geo visualization ---------- */
+function trackingGlobePoints() {
+  const points = [];
+  if (flightOn) points.push(...flights);
+  if (shipOn) points.push(...ships);
+  if (satOn) points.push(...satellites);
+  return points;
+}
+
 function updateGeoViz() {
   render2dArcs();
   if (globe && globeMode) {
-    const scope = geoScopeItems();
-    const counts = geoCounts(scope);
-    globe.pointsData(counts.concat(alertOn ? alertPoints : []));
+    // No news country dots/labels — only live tracking layers (flights/ships/sats) + alerts.
+    globe.pointsData((alertOn ? alertPoints : []).concat(trackingGlobePoints()));
     globe.ringsData(quakeOn ? quakes : []);
-    globe.labelsData(
-      counts.slice(0, 8).map((d) => ({
-        ...d,
-        label: `${stateByName.get(d.name.toLowerCase())?.code || d.name} ${d.count}`
-      }))
-    );
+    globe.labelsData([]);
     // The arc web is static; only (re)set it when the stream set changes (see refreshGlobeStreams).
   }
 }
@@ -2371,9 +3205,308 @@ alertToggle.addEventListener("click", () => {
   }
 });
 
-/* ---------- live translation of the feed + ticker to English ---------- */
+/* ---------- live tracking: flights · ships · satellites · sat imagery ---------- */
+const flightLayer = L.layerGroup().addTo(map);
+const shipLayer = L.layerGroup().addTo(map);
+const satelliteLayer = L.layerGroup().addTo(map);
+const flightToggle = document.querySelector("#flightToggle");
+const shipToggle = document.querySelector("#shipToggle");
+const satToggle = document.querySelector("#satToggle");
+const satImageryToggle = document.querySelector("#satImageryToggle");
+let flightOn = false;
+let shipOn = false;
+let satOn = false;
+let satImageryOn = true;
+let satImageryLayer = null;
+
+function subsampleList(items, max) {
+  if (items.length <= max) return items;
+  const out = [];
+  const step = items.length / max;
+  for (let i = 0; i < max; i++) out.push(items[Math.floor(i * step)]);
+  return out;
+}
+
+function decimateShipFeatures(features, max) {
+  const buckets = new Map();
+  const stride = Math.max(1, Math.floor(features.length / (max * 4)));
+  for (let i = 0; i < features.length; i += stride) {
+    const feature = features[i];
+    const coords = feature.geometry?.coordinates;
+    if (!coords || coords.length < 2) continue;
+    const lng = coords[0];
+    const lat = coords[1];
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+    const key = `${Math.floor(lat / 1.4)}:${Math.floor(lng / 1.4)}`;
+    if (buckets.has(key)) continue;
+    const props = feature.properties || {};
+    buckets.set(key, {
+      kind: "ship",
+      mmsi: props.mmsi || feature.mmsi || "—",
+      lat,
+      lng,
+      sog: props.sog,
+      cog: props.cog,
+      heading: props.heading
+    });
+    if (buckets.size >= max) break;
+  }
+  return Array.from(buckets.values());
+}
+
+function refreshTrackingGlobe() {
+  if (globe && globeMode) updateGeoViz(lastVisible);
+}
+
+async function loadFlights() {
+  try {
+    const response = await fetch("https://opensky-network.org/api/states/all", { cache: "no-store" });
+    if (!response.ok) throw new Error(`OpenSky ${response.status}`);
+    const data = await response.json();
+    const parsed = [];
+    (data.states || []).forEach((state) => {
+      if (!state || state[6] == null || state[5] == null || state[8]) return;
+      parsed.push({
+        kind: "flight",
+        icao: state[0],
+        callsign: (state[1] || "").trim() || state[0],
+        country: state[2] || "",
+        lng: state[5],
+        lat: state[6],
+        alt: state[7] ?? state[13],
+        velocity: state[9],
+        heading: state[10]
+      });
+    });
+    flights = subsampleList(parsed, MAX_FLIGHT_MARKERS);
+    drawFlights();
+    refreshTrackingGlobe();
+  } catch (error) {
+    setStatus("Flight tracking (OpenSky) unavailable right now.");
+  }
+}
+
+function drawFlights() {
+  flightLayer.clearLayers();
+  if (!flightOn) return;
+  flights.forEach((flight) => {
+    const color = "#4dd0e1";
+    L.circleMarker([flight.lat, flight.lng], {
+      radius: 3,
+      color,
+      weight: 1,
+      fillColor: color,
+      fillOpacity: 0.55
+    })
+      .bindPopup(
+        `<div class="popup-title">${escapeHtml(flight.callsign)}</div><div class="popup-meta">${escapeHtml(
+          flight.country || "Unknown"
+        )}${Number.isFinite(flight.alt) ? ` · ${Math.round(flight.alt)} m` : ""}</div>`
+      )
+      .addTo(flightLayer);
+  });
+}
+
+async function loadShips() {
+  try {
+    const response = await fetch("https://meri.digitraffic.fi/api/ais/v1/locations", {
+      cache: "no-store",
+      headers: { "Accept-Encoding": "gzip" }
+    });
+    if (!response.ok) throw new Error(`Digitraffic ${response.status}`);
+    const data = await response.json();
+    ships = decimateShipFeatures(data.features || [], MAX_SHIP_MARKERS);
+    drawShips();
+    refreshTrackingGlobe();
+  } catch (error) {
+    setStatus("Ship AIS feed (Digitraffic) unavailable right now.");
+  }
+}
+
+function drawShips() {
+  shipLayer.clearLayers();
+  if (!shipOn) return;
+  ships.forEach((ship) => {
+    const color = "#26a69a";
+    L.circleMarker([ship.lat, ship.lng], {
+      radius: 3.5,
+      color,
+      weight: 1,
+      fillColor: color,
+      fillOpacity: 0.5
+    })
+      .bindPopup(
+        `<div class="popup-title">MMSI ${escapeHtml(String(ship.mmsi))}</div><div class="popup-meta">${
+          Number.isFinite(ship.sog) ? `${ship.sog.toFixed(1)} kn` : "AIS position"
+        }${Number.isFinite(ship.heading) ? ` · hdg ${Math.round(ship.heading)}°` : ""}</div>`
+      )
+      .addTo(shipLayer);
+  });
+}
+
+function loadSatelliteLib() {
+  if (window.satellite) return Promise.resolve();
+  return loadScriptOnce("https://unpkg.com/satellite.js@4.1.4/dist/satellite.min.js");
+}
+
+function parseTleCatalog(text) {
+  const lines = text.trim().split(/\r?\n/);
+  const catalog = [];
+  for (let i = 0; i + 2 < lines.length; i += 3) {
+    const name = lines[i].trim();
+    if (!name) continue;
+    catalog.push({ name, line1: lines[i + 1], line2: lines[i + 2] });
+  }
+  return catalog;
+}
+
+function propagateTleCatalog(catalog, max) {
+  if (!window.satellite) return [];
+  const now = new Date();
+  const gmst = window.satellite.gstime(now);
+  const points = [];
+  catalog.slice(0, max).forEach((entry) => {
+    try {
+      const record = window.satellite.twoline2satrec(entry.line1, entry.line2);
+      const position = window.satellite.propagate(record, now);
+      if (!position.position) return;
+      const geo = window.satellite.eciToGeodetic(position.position, gmst);
+      points.push({
+        kind: "satellite",
+        name: entry.name,
+        lat: window.satellite.degreesLat(geo.latitude),
+        lng: window.satellite.degreesLong(geo.longitude),
+        alt: geo.height
+      });
+    } catch (error) {
+      /* skip malformed TLE rows */
+    }
+  });
+  return points;
+}
+
+async function loadSatellites() {
+  try {
+    await loadSatelliteLib();
+    const response = await fetch(
+      "https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=tle",
+      { cache: "no-store" }
+    );
+    if (!response.ok) throw new Error(`CelesTrak ${response.status}`);
+    const catalog = parseTleCatalog(await response.text());
+    satellites = propagateTleCatalog(catalog, MAX_SATELLITES);
+    if (!satellites.length) {
+      const iss = await fetch("https://api.wheretheiss.at/v1/satellites/25544", { cache: "no-store" });
+      if (iss.ok) {
+        const data = await iss.json();
+        satellites = [
+          {
+            kind: "satellite",
+            name: data.name || "ISS",
+            lat: data.latitude,
+            lng: data.longitude,
+            alt: data.altitude
+          }
+        ];
+      }
+    }
+    drawSatellites();
+    refreshTrackingGlobe();
+  } catch (error) {
+    setStatus("Satellite tracking unavailable right now.");
+  }
+}
+
+function drawSatellites() {
+  satelliteLayer.clearLayers();
+  if (!satOn) return;
+  satellites.forEach((sat) => {
+    const color = "#b388ff";
+    L.circleMarker([sat.lat, sat.lng], {
+      radius: 4,
+      color,
+      weight: 1.2,
+      fillColor: color,
+      fillOpacity: 0.55
+    })
+      .bindPopup(
+        `<div class="popup-title">${escapeHtml(sat.name)}</div><div class="popup-meta">${
+          Number.isFinite(sat.alt) ? `${Math.round(sat.alt)} km altitude` : "Orbital track"
+        }</div>`
+      )
+      .addTo(satelliteLayer);
+  });
+}
+
+function setSatImagery(on) {
+  satImageryOn = on;
+  if (satImageryToggle) satImageryToggle.setAttribute("aria-pressed", String(on));
+  if (globe) globe.globeImageUrl(on ? GLOBE_IMAGE_SAT : GLOBE_IMAGE_DEFAULT);
+  if (on) {
+    if (!satImageryLayer) {
+      satImageryLayer = L.tileLayer(
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        { maxZoom: 7, opacity: 0.92 }
+      );
+    }
+    if (!map.hasLayer(satImageryLayer)) satImageryLayer.addTo(map);
+  } else if (satImageryLayer && map.hasLayer(satImageryLayer)) {
+    satImageryLayer.remove();
+  }
+}
+
+if (flightToggle) {
+  flightToggle.addEventListener("click", () => {
+    flightOn = !flightOn;
+    flightToggle.setAttribute("aria-pressed", String(flightOn));
+    if (flightOn) loadFlights();
+    else {
+      drawFlights();
+      refreshTrackingGlobe();
+    }
+  });
+}
+
+if (shipToggle) {
+  shipToggle.addEventListener("click", () => {
+    shipOn = !shipOn;
+    shipToggle.setAttribute("aria-pressed", String(shipOn));
+    if (shipOn) loadShips();
+    else {
+      drawShips();
+      refreshTrackingGlobe();
+    }
+  });
+}
+
+if (satToggle) {
+  satToggle.addEventListener("click", () => {
+    satOn = !satOn;
+    satToggle.setAttribute("aria-pressed", String(satOn));
+    if (satOn) loadSatellites();
+    else {
+      drawSatellites();
+      refreshTrackingGlobe();
+    }
+  });
+}
+
+if (satImageryToggle) {
+  // Default is on (blue-marble terrain), so reflect that in the button.
+  satImageryToggle.setAttribute("aria-pressed", String(satImageryOn));
+  satImageryToggle.querySelector(".tool-label").textContent = satImageryOn ? "Sat imagery ✓" : "Sat imagery";
+  satImageryToggle.addEventListener("click", () => {
+    setSatImagery(!satImageryOn);
+    satImageryToggle.querySelector(".tool-label").textContent = satImageryOn ? "Sat imagery ✓" : "Sat imagery";
+  });
+}
+
+/* ---------- live translation of the feed + ticker to English (auto by default) ---------- */
 const translateBtn = document.querySelector("#translateBtn");
 if (translateBtn) {
+  // Reflect the on-by-default state in the toolbar button.
+  translateBtn.setAttribute("aria-pressed", String(translateOn));
+  translateBtn.querySelector(".tool-label").textContent = translateOn ? "English ✓" : "Translate";
   translateBtn.addEventListener("click", () => {
     translateOn = !translateOn;
     translateBtn.setAttribute("aria-pressed", String(translateOn));
@@ -2384,16 +3517,10 @@ if (translateBtn) {
   });
 }
 
-/* ---------- toggle the globe-anchored live-stream tiles (perf) ---------- */
-let tvOn = true;
+/* ---------- Globe TV toggle removed: no map-anchored stream markers ---------- */
+let tvOn = false;
 const tvToggle = document.querySelector("#tvToggle");
-if (tvToggle) {
-  tvToggle.addEventListener("click", () => {
-    tvOn = !tvOn;
-    tvToggle.setAttribute("aria-pressed", String(tvOn));
-    if (globe) globe.htmlElementsData(tvOn ? liveGlobeStreams() : []);
-  });
-}
+if (tvToggle) tvToggle.hidden = true;
 
 /* ---------- responsive: keep both renderers sized ---------- */
 window.addEventListener("resize", sizeGlobe);
@@ -2420,15 +3547,442 @@ window.addEventListener("appinstalled", () => {
   installBtn.hidden = true;
 });
 
-if ("serviceWorker" in navigator && /^https?:$/.test(window.location.protocol)) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js").catch(() => {
-      /* offline support is a progressive enhancement; ignore failures */
-    });
+// Dev: unregister any old service worker and wipe its caches so stale code can't be
+// served. (Re-enable the registration below once the app is stable for offline use.)
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.getRegistrations().then((regs) => regs.forEach((reg) => reg.unregister()));
+  if (window.caches && caches.keys) {
+    caches.keys().then((keys) => keys.forEach((key) => caches.delete(key)));
+  }
+}
+
+/* ---------- Tools dropdown (layers, radio, install, etc.) ---------- */
+const toolMenuBtn = document.querySelector("#toolMenuBtn");
+const toolMenuPanel = document.querySelector("#toolMenuPanel");
+
+function setToolMenuOpen(open) {
+  if (!toolMenuBtn || !toolMenuPanel) return;
+  toolMenuBtn.setAttribute("aria-expanded", String(open));
+  toolMenuPanel.hidden = !open;
+  toolMenuBtn.classList.toggle("is-open", open);
+}
+
+function closeToolMenu() {
+  setToolMenuOpen(false);
+}
+
+if (toolMenuBtn && toolMenuPanel) {
+  toolMenuBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setToolMenuOpen(toolMenuPanel.hidden);
+  });
+  toolMenuPanel.addEventListener("click", (event) => {
+    if (event.target.closest("#installBtn")) closeToolMenu();
+  });
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".tool-menu")) closeToolMenu();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeToolMenu();
   });
 }
 
 /* ---------- Globe-only experience: the 3D globe is the one and only map ---------- */
 // Hide the 2D/3D switch and boot straight into the globe.
 viewToggle.hidden = true;
-setGlobeMode(true).then(flyToSelected);
+requestAnimationFrame(() => {
+  setGlobeMode(true).then(flyToSelected);
+});
+
+/* ============================================================================
+ *  AI ASSISTANT — local Ollama (free/private) with graceful fallbacks,
+ *  voice control, news anchor, chat-with-the-globe, and story clustering.
+ * ========================================================================== */
+const OLLAMA_BASE = "http://localhost:11434";
+let ollamaModel = null;
+let ollamaReady = false;
+
+const aiAssistMeta = document.querySelector("#aiAssistMeta");
+const aiOutput = document.querySelector("#aiOutput");
+const aiAnchorBtn = document.querySelector("#aiAnchorBtn");
+const aiBriefBtn = document.querySelector("#aiBriefBtn");
+const aiMicBtn = document.querySelector("#aiMicBtn");
+const aiAskForm = document.querySelector("#aiAskForm");
+const aiAskInput = document.querySelector("#aiAskInput");
+
+async function detectOllama() {
+  try {
+    const res = await fetch(`${OLLAMA_BASE}/api/tags`, { cache: "no-store" });
+    if (!res.ok) throw new Error("tags");
+    const data = await res.json();
+    const models = (data.models || []).map((m) => m.name);
+    if (!models.length) throw new Error("empty");
+    ollamaModel = models.find((m) => /llama3|qwen|mistral|phi|gemma|deepseek/i.test(m)) || models[0];
+    ollamaReady = true;
+    if (aiAssistMeta) aiAssistMeta.textContent = `Ollama · ${ollamaModel.split(":")[0]}`;
+  } catch (error) {
+    ollamaReady = false;
+    if (aiAssistMeta) aiAssistMeta.textContent = "On-device (start Ollama for full AI)";
+  }
+}
+
+async function askOllama(prompt, system) {
+  const res = await fetch(`${OLLAMA_BASE}/api/generate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ model: ollamaModel, prompt, system, stream: false, options: { temperature: 0.6 } })
+  });
+  if (!res.ok) throw new Error(`Ollama ${res.status}`);
+  const data = await res.json();
+  return (data.response || "").trim();
+}
+
+function newsContext(limit) {
+  const items = (lastVisible.length ? lastVisible : articles).slice(0, limit || 18);
+  return items.map((a, i) => `${i + 1}. [${a.state}] ${a.title} (${a.source})`).join("\n");
+}
+
+function aiShow(html) {
+  if (!aiOutput) return;
+  aiOutput.hidden = false;
+  aiOutput.innerHTML = html;
+}
+
+function aiBusy(label) {
+  aiShow(`<p class="ai-thinking">${escapeHtml(label)}<span class="ai-dots">…</span></p>`);
+}
+
+function formatAi(text) {
+  const esc = escapeHtml((text || "").trim());
+  if (/^\s*[-*\d]/m.test(esc) && /\n/.test(esc)) {
+    const items = esc
+      .split(/\n+/)
+      .map((l) => l.replace(/^\s*([-*]|\d+\.)\s?/, "").trim())
+      .filter(Boolean)
+      .map((l) => `<li>${l}</li>`)
+      .join("");
+    return `<ul>${items}</ul>`;
+  }
+  return `<p>${esc.replace(/\n+/g, "</p><p>")}</p>`;
+}
+
+function speakText(text) {
+  const tts = window.speechSynthesis;
+  if (!tts || !text) return;
+  tts.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.rate = 1.03;
+  utterance.pitch = 1;
+  tts.speak(utterance);
+}
+
+/* ---------- Southern-girl voice via local Parler-TTS server ---------- */
+const PARLER_BASE = "http://127.0.0.1:5005";
+let parlerReady = false;
+let parlerStopRequested = false;
+
+// A single <audio> element, "unlocked" by the user's first interaction, so we can play
+// audio later (after the slow async synth) without the browser autoplay policy blocking us.
+const SILENT_WAV =
+  "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQAAAAA=";
+const voiceAudio = new Audio();
+let audioUnlocked = false;
+function unlockAudio() {
+  if (audioUnlocked) return;
+  voiceAudio.src = SILENT_WAV;
+  voiceAudio.play().then(
+    () => {
+      audioUnlocked = true;
+    },
+    () => {}
+  );
+}
+window.addEventListener("pointerdown", unlockAudio);
+window.addEventListener("keydown", unlockAudio);
+
+function voiceStatus(msg) {
+  const el = document.getElementById("aiVoiceTag");
+  if (el) el.textContent = msg;
+}
+
+async function detectParler() {
+  try {
+    const res = await fetch(`${PARLER_BASE}/health`, { cache: "no-store" });
+    parlerReady = res.ok;
+  } catch (error) {
+    parlerReady = false;
+  }
+  return parlerReady;
+}
+
+function stopSpeech() {
+  parlerStopRequested = true;
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  voiceAudio.pause();
+}
+
+async function fetchParlerClip(text) {
+  const res = await fetch(`${PARLER_BASE}/tts`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text })
+  });
+  if (!res.ok) throw new Error(`Parler ${res.status}`);
+  return URL.createObjectURL(await res.blob());
+}
+
+// Play a clip through the unlocked, reused audio element so autoplay can't block it.
+function playClip(url) {
+  return new Promise((resolve) => {
+    voiceAudio.onended = () => {
+      URL.revokeObjectURL(url);
+      resolve();
+    };
+    voiceAudio.onerror = () => resolve();
+    voiceAudio.src = url;
+    voiceAudio.play().catch(() => {
+      voiceStatus("🔇 Tap anywhere, then click Anchor again to allow audio.");
+      resolve();
+    });
+  });
+}
+
+// Speak with the Southern Parler voice if the server is up; else the browser voice.
+// Synthesizes sentence-by-sentence and prefetches the next clip so CPU latency hides.
+async function speakNews(text) {
+  stopSpeech();
+  parlerStopRequested = false;
+  if (!text) return;
+  if (!(await detectParler())) {
+    voiceStatus("🔊 Browser voice");
+    speakText(text);
+    return;
+  }
+  const sentences = (text.match(/[^.!?]+[.!?]*/g) || [text]).map((s) => s.trim()).filter(Boolean);
+  voiceStatus(`🎙 Synthesizing Southern voice… (slow on CPU)`);
+  let nextClip = fetchParlerClip(sentences[0]).catch(() => null);
+  for (let i = 0; i < sentences.length; i += 1) {
+    const url = await nextClip;
+    if (parlerStopRequested) return;
+    if (i + 1 < sentences.length) nextClip = fetchParlerClip(sentences[i + 1]).catch(() => null);
+    if (!url) {
+      voiceStatus("🔊 Browser voice (synth unavailable)");
+      speakText(sentences.slice(i).join(" "));
+      return;
+    }
+    voiceStatus(`🔊 On air · ${i + 1}/${sentences.length}`);
+    await playClip(url);
+    if (parlerStopRequested) return;
+  }
+  voiceStatus("✓ Broadcast complete");
+}
+
+/* ---------- Brief ---------- */
+async function aiBrief() {
+  const scope = selectedState || "the world";
+  aiBusy(`Summarizing ${scope}`);
+  if (ollamaReady) {
+    try {
+      const system =
+        "You are a concise newswire editor. Summarize the provided live headlines into 3-4 short factual bullet points. Neutral tone. No preamble.";
+      const out = await askOllama(`Headlines for ${scope}:\n${newsContext()}\n\nWrite the brief:`, system);
+      aiShow(`<div class="ai-msg">${formatAi(out)}</div>`);
+      return;
+    } catch (error) {
+      /* fall through to extractive */
+    }
+  }
+  aiShow(`<div class="ai-msg">${extractiveBrief(scope)}</div>`);
+}
+
+function extractiveBrief(scope) {
+  const items = (lastVisible.length ? lastVisible : articles).slice(0, 5);
+  if (!items.length) return "<p>No stories to summarize yet.</p>";
+  const list = items.map((a) => `<li>${escapeHtml(a.state)}: ${escapeHtml(a.title)}</li>`).join("");
+  return `<p>Top stories across ${escapeHtml(scope)}:</p><ul>${list}</ul>`;
+}
+
+/* ---------- AI news anchor (spoken) ---------- */
+async function aiAnchor() {
+  const scope = selectedState || "around the world";
+  aiBusy("Writing the broadcast");
+  let script = "";
+  if (ollamaReady) {
+    try {
+      const system =
+        "You are a professional TV news anchor. Write a smooth ~110-word spoken news segment from the headlines. Natural broadcast tone, first sentence is a hook, no bullet points, no stage directions.";
+      script = await askOllama(`Headlines for ${scope}:\n${newsContext(8)}\n\nWrite the on-air segment:`, system);
+    } catch (error) {
+      /* fall through */
+    }
+  }
+  if (!script) {
+    const items = (lastVisible.length ? lastVisible : articles).slice(0, 6);
+    script = `Here is your news update for ${scope}. ` + items.map((a) => `From ${a.state}: ${a.title}.`).join(" ");
+  }
+  aiShow(`<div class="ai-msg"><p class="ai-tag" id="aiVoiceTag">Preparing voice…</p>${formatAi(script)}</div>`);
+  speakNews(script);
+}
+
+/* ---------- Chat with the globe + voice commands ---------- */
+function matchCountryName(text) {
+  const t = (text || "").toLowerCase().trim();
+  if (!t) return null;
+  if (stateByName.has(t)) return stateByName.get(t).name;
+  for (const [key, record] of stateByName) {
+    if (key.length > 3 && t.includes(key)) return record.name;
+  }
+  return null;
+}
+
+function countryMentioned(text) {
+  const lower = ` ${(text || "").toLowerCase()} `;
+  for (const [key, record] of stateByName) {
+    if (key.length > 4 && lower.includes(` ${key} `)) return record.name;
+  }
+  return null;
+}
+
+async function aiAsk(query) {
+  query = (query || "").trim();
+  if (!query) return;
+  if (aiAskInput) aiAskInput.value = "";
+
+  // Voice/text navigation command: "fly to Japan", "show me Brazil"
+  const nav = query.match(/\b(?:fly|go|take me|show me|zoom|navigate)\s+(?:to|me to)?\s*(.+)/i);
+  if (nav) {
+    const country = matchCountryName(nav[1].replace(/[.?!]+$/, ""));
+    if (country) {
+      selectedState = country;
+      render();
+      flyToSelected();
+      aiShow(`<div class="ai-msg">Flying to <b>${escapeHtml(country)}</b>.</div>`);
+      return;
+    }
+  }
+
+  aiBusy("Thinking");
+  if (ollamaReady) {
+    try {
+      const system =
+        "You answer questions about current world news using ONLY the provided live headlines as your source. If they don't cover it, say so briefly. Be concise: 2-4 sentences.";
+      const out = await askOllama(`Live headlines:\n${newsContext()}\n\nQuestion: ${query}\n\nAnswer:`, system);
+      aiShow(`<div class="ai-msg">${formatAi(out)}</div>`);
+      const country = countryMentioned(out);
+      if (country) {
+        selectedState = country;
+        render();
+        flyToSelected();
+      }
+      return;
+    } catch (error) {
+      /* fall through */
+    }
+  }
+
+  // Fallback: keyword search the live feed.
+  const term = query.toLowerCase();
+  const hits = (lastVisible.length ? lastVisible : articles)
+    .filter((a) => a.title.toLowerCase().includes(term) || a.state.toLowerCase().includes(term))
+    .slice(0, 5);
+  aiShow(
+    hits.length
+      ? `<div class="ai-msg"><p>Related headlines:</p><ul>${hits
+          .map((a) => `<li>${escapeHtml(a.state)}: ${escapeHtml(a.title)}</li>`)
+          .join("")}</ul></div>`
+      : `<div class="ai-msg">No matching headlines. Start a local model (Ollama) for full answers.</div>`
+  );
+}
+
+/* ---------- Voice input (Web Speech API) ---------- */
+const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+let recognizer = null;
+let listening = false;
+
+function toggleMic() {
+  if (!SpeechRec) {
+    aiShow(`<div class="ai-msg">Voice input isn't supported in this browser.</div>`);
+    return;
+  }
+  if (listening && recognizer) {
+    recognizer.stop();
+    return;
+  }
+  recognizer = new SpeechRec();
+  recognizer.lang = "en-US";
+  recognizer.interimResults = false;
+  recognizer.maxAlternatives = 1;
+  recognizer.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    if (aiAskInput) aiAskInput.value = transcript;
+    aiAsk(transcript);
+  };
+  recognizer.onend = () => {
+    listening = false;
+    if (aiMicBtn) aiMicBtn.setAttribute("aria-pressed", "false");
+  };
+  recognizer.onerror = recognizer.onend;
+  listening = true;
+  if (aiMicBtn) aiMicBtn.setAttribute("aria-pressed", "true");
+  recognizer.start();
+}
+
+/* ---------- Story clustering / dedup (client-side, free) ---------- */
+function aiTokenize(title) {
+  return new Set(
+    (title || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, " ")
+      .split(/\s+/)
+      .filter((w) => w.length > 3)
+  );
+}
+
+function jaccard(a, b) {
+  let intersection = 0;
+  a.forEach((w) => {
+    if (b.has(w)) intersection += 1;
+  });
+  const union = a.size + b.size - intersection || 1;
+  return intersection / union;
+}
+
+function clusterArticles(items) {
+  const out = [];
+  const tokenSets = [];
+  (items || []).forEach((article) => {
+    const tokens = aiTokenize(article.title);
+    let merged = false;
+    for (let i = 0; i < tokenSets.length; i += 1) {
+      if (jaccard(tokens, tokenSets[i]) > 0.55) {
+        out[i] = { ...out[i], dupes: (out[i].dupes || 0) + 1 };
+        merged = true;
+        break;
+      }
+    }
+    if (!merged) {
+      out.push({ ...article });
+      tokenSets.push(tokens);
+    }
+  });
+  return out;
+}
+
+/* ---------- wire up ---------- */
+if (aiAnchorBtn) aiAnchorBtn.addEventListener("click", aiAnchor);
+if (aiBriefBtn) aiBriefBtn.addEventListener("click", aiBrief);
+if (aiMicBtn) aiMicBtn.addEventListener("click", toggleMic);
+if (aiAskForm) {
+  aiAskForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    aiAsk(aiAskInput ? aiAskInput.value : "");
+  });
+}
+async function updateAiStatus() {
+  await detectOllama();
+  if (aiAssistMeta && (await detectParler())) {
+    aiAssistMeta.textContent += " · 🎙 Southern";
+  }
+}
+updateAiStatus();
+setInterval(updateAiStatus, 45000);
