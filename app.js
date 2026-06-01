@@ -491,6 +491,8 @@ const timeScrubber = document.querySelector("#timeScrubber");
 const timeWindowLabel = document.querySelector("#timeWindowLabel");
 const tourButton = document.querySelector("#tourButton");
 const tourStatus = document.querySelector("#tourStatus");
+const spotlightPrev = document.querySelector("#spotlightPrev");
+const spotlightNext = document.querySelector("#spotlightNext");
 
 let articles = [];
 let markers = [];
@@ -501,7 +503,8 @@ let searchTimer;
 let currentStateCounts = {};
 let spotlightTimer;
 let spotlightActive = false;
-let spotlightIndex = 0;
+let spotlightStreamQueue = [];
+let spotlightStreamIndex = 0;
 let timeWindowHours = Number(timeScrubber?.value || 24);
 
 const SPOTLIGHT_INTERVAL_MS = 30000;
@@ -1276,7 +1279,13 @@ function buildGlobeStream(stream) {
     `<div class="gs-head"><span>${flagEmoji(stream.code)} ${escapeHtml(stream.code)}</span>` +
     `<b>${escapeHtml(stream.name)}</b><span class="gs-live"><span class="live-dot"></span>LIVE</span></div>` +
     `<div class="gs-frame" data-embed="${escapeHtml(stream.embedUrl.replace("autoplay=0", "autoplay=1"))}"></div>`;
-  el.addEventListener("click", () => {
+  el.addEventListener("click", (event) => {
+    if (spotlightActive) {
+      event.preventDefault();
+      event.stopPropagation();
+      focusGlobeStreamById(stream.id);
+      return;
+    }
     window.open(stream.url, "_blank", "noreferrer");
   });
   return el;
@@ -1436,6 +1445,17 @@ function refreshGlobeStreams() {
     globe.htmlElementsData(liveGlobeStreams());
   }
   globe.arcsData(webArcs()); // keep the web in sync as streams come and go
+  if (spotlightActive && spotlightStreamQueue.length) {
+    const currentId = spotlightStreamQueue[spotlightStreamIndex]?.id;
+    spotlightStreamQueue = buildSpotlightStreamQueue();
+    if (!spotlightStreamQueue.length) {
+      stopSpotlightTour();
+      return;
+    }
+    const nextIdx = currentId ? spotlightStreamQueue.findIndex((item) => item.id === currentId) : 0;
+    spotlightStreamIndex = nextIdx >= 0 ? nextIdx : 0;
+    requestAnimationFrame(() => focusGlobeStream(spotlightStreamQueue[spotlightStreamIndex]));
+  }
 }
 
 // Give every link a second chance: clear the dead list, re-render, and re-run the
@@ -1561,9 +1581,19 @@ function updateSpotlightReadout() {
   if (!tourButton || !tourStatus) return;
   tourButton.classList.toggle("is-active", spotlightActive);
   tourButton.textContent = spotlightActive ? "Spotlight on" : "Spotlight off";
-  tourStatus.textContent = spotlightActive
-    ? "Auto-tour cycling the busiest countries"
-    : `Auto-tour paused${lastVisible.length ? ` · ${lastVisible.length} visible stories` : ""}`;
+  if (spotlightPrev) spotlightPrev.hidden = !spotlightActive;
+  if (spotlightNext) spotlightNext.hidden = !spotlightActive;
+  if (!spotlightActive) {
+    tourStatus.textContent = `Auto-tour paused${lastVisible.length ? ` · ${lastVisible.length} visible stories` : ""}`;
+    return;
+  }
+  const stream = spotlightStreamQueue[spotlightStreamIndex];
+  const total = spotlightStreamQueue.length;
+  tourStatus.textContent = stream
+    ? `${stream.name} · ${spotlightStreamIndex + 1}/${total} · ◀ ▶ or tap a tile`
+    : total
+      ? "Loading globe streams…"
+      : "No live streams on the globe right now";
 }
 
 function rankStates(items, limit = 5) {
@@ -1572,44 +1602,90 @@ function rankStates(items, limit = 5) {
     .slice(0, limit);
 }
 
-// Rank countries from the current filters but ignore the spotlight's own country
-// selection — otherwise the queue collapses to the single highlighted country.
-function tourQueue() {
-  const saved = selectedState;
-  selectedState = "";
-  const items = filteredArticles();
-  selectedState = saved;
-  return rankStates(items, 20);
+function shuffleArray(items) {
+  const out = items.slice();
+  for (let i = out.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
 }
 
-function spotlightStep() {
-  const queue = tourQueue();
-  if (!queue.length) {
+function buildSpotlightStreamQueue() {
+  return shuffleArray(liveGlobeStreams());
+}
+
+function mountGlobeStreamIframe(frame, streamId, embedUrl) {
+  if (!frame || frame.firstChild || !embedUrl) return;
+  const iframe = document.createElement("iframe");
+  iframe.id = `globe-frame-${streamId}`;
+  iframe.src = embedUrl;
+  iframe.loading = "lazy";
+  iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+  iframe.referrerPolicy = "strict-origin-when-cross-origin";
+  frame.appendChild(iframe);
+  checkGlobeFrame(iframe, streamId);
+}
+
+function clearGlobeStreamHighlight() {
+  globeEl.querySelectorAll(".globe-stream.gs-spotlight").forEach((el) => el.classList.remove("gs-spotlight"));
+}
+
+function ensureGlobeTvOn() {
+  if (typeof tvOn === "undefined" || tvOn) return;
+  tvOn = true;
+  if (tvToggle) tvToggle.setAttribute("aria-pressed", "true");
+  refreshGlobeStreams();
+}
+
+function focusGlobeStream(stream) {
+  if (!stream || !globe) return;
+  const idx = spotlightStreamQueue.findIndex((item) => item.id === stream.id);
+  if (idx >= 0) spotlightStreamIndex = idx;
+  document.body.classList.add("spotlight-streams");
+  clearGlobeStreamHighlight();
+  const tile = globeEl.querySelector(`.globe-stream[data-stream-id="${stream.id}"]`);
+  if (tile) {
+    tile.classList.add("gs-spotlight");
+    const frame = tile.querySelector(".gs-frame");
+    if (frame && frame.dataset.embed) mountGlobeStreamIframe(frame, stream.id, frame.dataset.embed);
+  }
+  globe.pointOfView({ lat: stream.lat, lng: stream.lng, altitude: 1.52 }, 1300);
+  showSpotlightPreviewForStream(stream);
+  updateSpotlightReadout();
+}
+
+function focusGlobeStreamById(streamId) {
+  const stream =
+    spotlightStreamQueue.find((item) => item.id === streamId) || liveGlobeStreams().find((item) => item.id === streamId);
+  if (!stream) return;
+  if (!spotlightStreamQueue.some((item) => item.id === stream.id)) {
+    spotlightStreamQueue = buildSpotlightStreamQueue();
+  }
+  focusGlobeStream(stream);
+  if (spotlightActive) restartSpotlightTimer();
+}
+
+function spotlightStreamStep(direction = 1) {
+  if (!globe) return;
+  if (!spotlightStreamQueue.length) spotlightStreamQueue = buildSpotlightStreamQueue();
+  if (!spotlightStreamQueue.length) {
     stopSpotlightTour();
+    setStatus("No globe live streams available for spotlight.");
     return;
   }
+  spotlightStreamIndex = (spotlightStreamIndex + direction + spotlightStreamQueue.length) % spotlightStreamQueue.length;
+  focusGlobeStream(spotlightStreamQueue[spotlightStreamIndex]);
+}
 
-  if (spotlightIndex >= queue.length) spotlightIndex = 0;
-  const [stateName] = queue[spotlightIndex];
-  spotlightIndex = (spotlightIndex + 1) % queue.length;
+function spotlightStep(direction = 1) {
+  spotlightStreamStep(direction);
+}
 
-  const state = stateByName.get(stateName.toLowerCase());
-  if (!state) return;
-
-  selectedState = stateName;
-  render();
-  if (globe && globeMode) {
-    // Orbit the globe so the spotlighted country rotates to face the viewer.
-    globe.pointOfView({ lat: state.lat, lng: state.lng, altitude: 1.7 }, 1300);
-  } else {
-    map.flyTo([state.lat, state.lng], Math.min(3.5, Math.max(2.25, map.getZoom() + 0.4)), {
-      animate: true,
-      duration: 1.6,
-      easeLinearity: 0.22
-    });
-    markersByState.get(stateName)?.openPopup();
-  }
-  showSpotlightPreview(stateName);
+function restartSpotlightTimer() {
+  if (!spotlightActive) return;
+  if (spotlightTimer) clearInterval(spotlightTimer);
+  spotlightTimer = window.setInterval(() => spotlightStep(1), SPOTLIGHT_INTERVAL_MS);
 }
 
 // The channel that actually originates from each country (no cross-country fallback —
@@ -1642,25 +1718,10 @@ function streamForCountry(name) {
   return LIVE_STREAMS.find((s) => s.name === wanted && s.embedUrl && !deadStreams.has(s.id)) || null;
 }
 
-function showSpotlightPreview(country) {
+function activateSpotlightFrame(stream) {
   const panel = document.querySelector("#spotlightPreview");
-  if (!panel || !HAS_HTTP_ORIGIN) return;
-  const stream = streamForCountry(country);
-  if (!stream) {
-    hideSpotlightPreview();
-    return;
-  }
-
-  document.querySelector("#spotlightCaption").textContent = country;
-
-  // Tie the preview to the actual top story for that country.
-  const story = lastVisible.find((article) => article.state === country);
-  document.querySelector("#spotlightFoot").innerHTML =
-    `<span class="sp-chan">${escapeHtml(stream.name)}</span>` +
-    (story ? `<span class="sp-line">${escapeHtml(displayTitle(story))}</span>` : "");
-
-  // Each stream keeps its OWN iframe: create it once, then just toggle which is shown.
   const container = document.querySelector("#spotlightFrame");
+  if (!panel || !container || !stream || !stream.embedUrl) return;
   container.querySelectorAll("iframe").forEach((frame) => frame.classList.remove("active"));
   const frameId = `sp-frame-${stream.id}`;
   let frame = document.getElementById(frameId);
@@ -1678,6 +1739,29 @@ function showSpotlightPreview(country) {
   panel.hidden = false;
 }
 
+function showSpotlightPreviewForStream(stream) {
+  if (!HAS_HTTP_ORIGIN) return;
+  document.querySelector("#spotlightCaption").textContent = `${flagEmoji(stream.code)} ${stream.name}`;
+  document.querySelector("#spotlightFoot").innerHTML =
+    `<span class="sp-chan">${escapeHtml(stream.category)} · ${escapeHtml(stream.group)}</span>` +
+    `<span class="sp-line">${escapeHtml(stream.preview)}</span>`;
+  activateSpotlightFrame(stream);
+}
+
+function showSpotlightPreview(country) {
+  const stream = streamForCountry(country);
+  if (!stream) {
+    hideSpotlightPreview();
+    return;
+  }
+  document.querySelector("#spotlightCaption").textContent = country;
+  const story = lastVisible.find((article) => article.state === country);
+  document.querySelector("#spotlightFoot").innerHTML =
+    `<span class="sp-chan">${escapeHtml(stream.name)}</span>` +
+    (story ? `<span class="sp-line">${escapeHtml(displayTitle(story))}</span>` : "");
+  activateSpotlightFrame(stream);
+}
+
 function hideSpotlightPreview() {
   const panel = document.querySelector("#spotlightPreview");
   if (!panel) return;
@@ -1688,20 +1772,31 @@ function hideSpotlightPreview() {
 
 function startSpotlightTour() {
   if (spotlightActive) return;
+  if (!globe) {
+    setStatus("Load the 3D globe before starting spotlight.");
+    return;
+  }
+  ensureGlobeTvOn();
   spotlightActive = true;
-  spotlightIndex = 0;
-  if (globe) globe.controls().autoRotate = false; // hold still while we fly between hotspots
+  spotlightStreamQueue = buildSpotlightStreamQueue();
+  spotlightStreamIndex = -1;
+  document.body.classList.add("spotlight-streams");
+  if (globe) globe.controls().autoRotate = false;
   updateSpotlightReadout();
-  spotlightStep();
-  spotlightTimer = window.setInterval(spotlightStep, SPOTLIGHT_INTERVAL_MS);
+  spotlightStep(1);
+  restartSpotlightTimer();
 }
 
 function stopSpotlightTour() {
   spotlightActive = false;
+  spotlightStreamQueue = [];
+  spotlightStreamIndex = 0;
   if (spotlightTimer) {
     clearInterval(spotlightTimer);
     spotlightTimer = undefined;
   }
+  document.body.classList.remove("spotlight-streams");
+  clearGlobeStreamHighlight();
   if (globe) globe.controls().autoRotate = true;
   hideSpotlightPreview();
   updateSpotlightReadout();
@@ -1724,6 +1819,32 @@ timeScrubber.addEventListener("input", (event) => {
 categorySelect.addEventListener("change", () => loadNews());
 refreshButton.addEventListener("click", () => loadNews());
 tourButton.addEventListener("click", () => toggleSpotlightTour());
+if (spotlightPrev) {
+  spotlightPrev.addEventListener("click", () => {
+    if (!spotlightActive) return;
+    spotlightStep(-1);
+    restartSpotlightTimer();
+  });
+}
+if (spotlightNext) {
+  spotlightNext.addEventListener("click", () => {
+    if (!spotlightActive) return;
+    spotlightStep(1);
+    restartSpotlightTimer();
+  });
+}
+window.addEventListener("keydown", (event) => {
+  if (!spotlightActive || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    spotlightStep(-1);
+    restartSpotlightTimer();
+  } else if (event.key === "ArrowRight") {
+    event.preventDefault();
+    spotlightStep(1);
+    restartSpotlightTimer();
+  }
+});
 if (pulseTabs) {
   pulseTabs.addEventListener("click", (event) => {
     const tab = event.target.closest("[data-tab]");
@@ -1897,16 +2018,8 @@ async function ensureGlobe() {
       el.style.opacity = isVisible ? "1" : "0";
       el.style.pointerEvents = isVisible ? "auto" : "none";
       const frame = el.querySelector(".gs-frame");
-      if (isVisible && frame && !frame.firstChild && frame.dataset.embed) {
-        const streamId = Number(el.dataset.streamId);
-        const iframe = document.createElement("iframe");
-        iframe.id = `globe-frame-${streamId}`;
-        iframe.src = frame.dataset.embed;
-        iframe.loading = "lazy";
-        iframe.allow = "autoplay; encrypted-media; picture-in-picture";
-        iframe.referrerPolicy = "strict-origin-when-cross-origin";
-        frame.appendChild(iframe);
-        checkGlobeFrame(iframe, streamId);
+      if (isVisible && frame && frame.dataset.embed) {
+        mountGlobeStreamIframe(frame, Number(el.dataset.streamId), frame.dataset.embed);
       }
     });
 

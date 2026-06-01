@@ -222,6 +222,31 @@ select {
   border-color: rgba(47, 208, 196, 0.72);
 }
 
+.tour-nav {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+
+.tour-nav:hover {
+  border-color: rgba(47, 208, 196, 0.72);
+  color: #bff7f1;
+}
+
+.tour-nav[hidden] {
+  display: none;
+}
+
 .tour-status {
   color: var(--muted);
   font-size: 0.78rem;
@@ -2213,6 +2238,19 @@ button,
 .globe-stream:hover {
   border-color: var(--teal);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 26px rgba(47, 208, 196, 0.4);
+}
+
+body.spotlight-streams .globe-stream:not(.gs-spotlight) {
+  opacity: 0.38;
+  filter: saturate(0.65);
+}
+
+body.spotlight-streams .globe-stream.gs-spotlight {
+  opacity: 1;
+  z-index: 20;
+  border-color: var(--teal);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.65), 0 0 32px rgba(47, 208, 196, 0.45);
 }
 
 .gs-head {
