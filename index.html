@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>World Live News Map</title>
+    <meta name="theme-color" content="#070b11" />
+    <meta name="description" content="Live world news on an interactive map and 3D globe, with AI briefings, live streams, quakes and weather alerts." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="icon" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./vendor/leaflet.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="map-panel" aria-label="Interactive world news map">
+        <div id="map" class="map"></div>
+        <div id="globe" class="globe" hidden></div>
+        <div class="control-stack">
+        <div class="topbar">
+          <div>
+            <h1>World Live News Map</h1>
+            <p id="statusText">Loading global headlines...</p>
+          </div>
+          <div class="controls" aria-label="News controls">
+            <label class="search">
+              <span class="sr-only">Search news</span>
+              <input id="searchInput" type="search" placeholder="Search topics" autocomplete="off" />
+            </label>
+            <select id="categorySelect" aria-label="Filter category">
+              <option value="">All news</option>
+              <option value="ai">AI &amp; Tech</option>
+              <option value="politics">Politics</option>
+              <option value="business">Business</option>
+              <option value="technology">Technology</option>
+              <option value="health">Health</option>
+              <option value="weather">Weather</option>
+              <option value="sports">Sports</option>
+            </select>
+            <button id="refreshButton" type="button" title="Refresh feed" aria-label="Refresh feed">
+              <span aria-hidden="true">&#8635;</span>
+            </button>
+          </div>
+        </div>
+        <div class="toolbar" aria-label="View and layer controls">
+          <button id="viewToggle" class="tool" type="button" aria-pressed="false" title="Toggle 2D map / 3D globe">
+            <span aria-hidden="true">&#127760;</span> <span class="tool-label">3D Globe</span>
+          </button>
+          <button id="radioBtn" class="tool" type="button" aria-pressed="false" title="Read the briefing aloud">
+            <span aria-hidden="true">&#128266;</span> <span class="tool-label">Radio</span>
+          </button>
+          <button id="quakeToggle" class="tool" type="button" aria-pressed="false" title="Toggle live earthquakes (USGS)">
+            <span aria-hidden="true">&#127759;</span> <span class="tool-label">Quakes</span>
+          </button>
+          <button id="alertToggle" class="tool" type="button" aria-pressed="false" title="Toggle live US weather alerts (NWS)">
+            <span aria-hidden="true">&#9888;</span> <span class="tool-label">Alerts</span>
+          </button>
+          <button id="translateBtn" class="tool" type="button" aria-pressed="false" title="Translate headlines to English">
+            <span aria-hidden="true">&#127760;</span> <span class="tool-label">Translate</span>
+          </button>
+          <button id="tvToggle" class="tool" type="button" aria-pressed="true" title="Toggle live-stream tiles on the globe">
+            <span aria-hidden="true">&#128250;</span> <span class="tool-label">Globe TV</span>
+          </button>
+          <button id="installBtn" class="tool" type="button" hidden title="Install this app">
+            <span aria-hidden="true">&#11015;</span> <span class="tool-label">Install</span>
+          </button>
+        </div>
+        <div class="map-tools" aria-label="Replay and spotlight controls">
+          <label class="timeline-control" for="timeScrubber">
+            <span class="timeline-label"><strong id="timeWindowLabel">24h</strong> replay</span>
+            <input id="timeScrubber" type="range" min="1" max="24" value="24" step="1" aria-label="Replay window in hours" />
+          </label>
+          <button id="tourButton" class="tour-button" type="button" aria-label="Toggle hotspot spotlight">Spotlight off</button>
+          <span id="tourStatus" class="tour-status">Auto-tour paused</span>
+        </div>
+        </div>
+        <div class="legend" aria-label="Map legend">
+          <span><i class="hot"></i> High volume</span>
+          <span><i class="warm"></i> Medium</span>
+          <span><i class="cool"></i> Emerging</span>
+          <span><i class="quake"></i> Quake</span>
+          <span><i class="alert"></i> Alert</span>
+        </div>
+        <div class="ticker" id="ticker" aria-label="Live headline ticker" hidden>
+          <span class="ticker-tag"><span class="live-dot"></span> LIVE</span>
+          <div class="ticker-track" id="tickerTrack"></div>
+        </div>
+        <div class="spotlight-preview" id="spotlightPreview" aria-label="Live stream preview" hidden>
+          <div class="sp-head">
+            <span class="sp-live"><span class="live-dot"></span> LIVE</span>
+            <span class="sp-cap" id="spotlightCaption"></span>
+          </div>
+          <div class="sp-frame" id="spotlightFrame"></div>
+          <div class="sp-foot" id="spotlightFoot"></div>
+        </div>
+      </section>
+
+      <aside class="feed" aria-label="Live news feed">
+        <header class="feed-header">
+          <div>
+            <p class="eyebrow">Live Feed</p>
+            <h2 id="feedTitle">Global Headlines</h2>
+          </div>
+          <span id="articleCount" class="count">0</span>
+        </header>
+        <section class="aipulse" aria-label="Live pulse: AI, GitHub, tech and world news">
+          <div class="section-label">
+            <span><span class="ai-badge">AI</span> Pulse</span>
+            <small id="aiPulseMeta">live</small>
+          </div>
+          <div id="pulseTabs" class="pulse-tabs"></div>
+          <div id="aiPulseList" class="aipulse-list"></div>
+        </section>
+        <section class="streams" aria-label="Live news streams">
+          <div class="section-label">
+            <span>Live Streams</span>
+            <small>Official sources</small>
+          </div>
+          <div id="streamList" class="stream-list"></div>
+        </section>
+        <div id="feedList" class="feed-list"></div>
+      </aside>
+    </main>
+    <script src="./vendor/leaflet.js"></script>
+    <script src="./data/world-countries.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
